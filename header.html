@@ -106,7 +106,7 @@
       color: #C9A227;
     }
     
-    /* Mobile Menu */
+    /* Mobile Menu - Initially Hidden */
     .mobile-menu {
       display: none;
       background: white;
@@ -116,12 +116,17 @@
       gap: 0.75rem;
     }
     
+    /* When mobile menu is active/open */
+    .mobile-menu.active {
+      display: flex;
+    }
+    
     .mobile-menu a {
       text-decoration: none;
       color: #4a5568;
       font-weight: 500;
       padding: 0.6rem 0;
-      transition: color 0.2s;
+      transition: all 0.2s;
       font-size: 1rem;
       border-bottom: 1px solid #f0f0f0;
     }
@@ -170,7 +175,7 @@
       }
     }
     
-    /* Responsive - Mobile */
+    /* Responsive - Mobile (show hamburger menu) */
     @media (max-width: 900px) {
       .nav-links {
         display: none;
@@ -233,7 +238,7 @@
       <a href="contact.html" class="contact-btn">Contact</a>
     </div>
     
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
       <i class="fas fa-bars"></i>
     </button>
   </div>
@@ -252,36 +257,73 @@
 </div>
 
 <script>
-  // Header independent JavaScript
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', function() {
-        if (mobileMenu.style.display === 'flex') {
-          mobileMenu.style.display = 'none';
-        } else {
-          mobileMenu.style.display = 'flex';
-        }
-      });
+  (function() {
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeader);
+    } else {
+      initHeader();
     }
     
-    // Close mobile menu when clicking on a link (better UX)
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenu.style.display = 'none';
-      });
-    });
-    
-    // Handle window resize - if resizing to desktop while menu is open, hide it
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 900) {
-        mobileMenu.style.display = 'none';
+    function initHeader() {
+      // Get elements
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      // Debug: Log to console if elements exist
+      console.log('Mobile button found:', !!mobileBtn);
+      console.log('Mobile menu found:', !!mobileMenu);
+      
+      if (mobileBtn && mobileMenu) {
+        // Remove any existing event listeners by cloning and replacing (clean approach)
+        const newBtn = mobileBtn.cloneNode(true);
+        mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
+        const finalMobileBtn = document.getElementById('mobileMenuBtn');
+        
+        // Toggle menu function
+        function toggleMenu() {
+          console.log('Menu toggled');
+          if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+          } else {
+            mobileMenu.classList.add('active');
+          }
+        }
+        
+        // Add click event to hamburger button
+        finalMobileBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        });
+        
+        // Close mobile menu when clicking on any link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+          });
+        });
+        
+        // Handle window resize - close menu when switching to desktop view
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 900) {
+            mobileMenu.classList.remove('active');
+          }
+        });
+        
+        // Close menu when clicking outside (optional but good UX)
+        document.addEventListener('click', function(event) {
+          const isClickInsideNav = mobileMenu.contains(event.target) || finalMobileBtn.contains(event.target);
+          if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+          }
+        });
+      } else {
+        console.error('Mobile menu elements not found! Check IDs: mobileMenuBtn, mobileMenu');
       }
-    });
-  });
+    }
+  })();
 </script>
 
 </body>
