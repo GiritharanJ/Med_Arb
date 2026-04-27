@@ -1,25 +1,278 @@
-<?php
-// footer.php - Shared footer component
-?>
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/919841098484?text=Hello%20Med%20Arb%20International%2C%20I%20need%20legal%20assistance" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Med Arb International | Footer Component</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .footer {
+      background: #0A2540;
+      color: #e2e8f0;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    
+    /* Part 1: Left - Intro */
+    .footer-intro h3 {
+      color: #C9A227;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-intro p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-intro .tagline {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    
+    /* Part 2: Center - Quick Links */
+    .footer-links h4, .footer-social h4, .footer-policy h4 {
+      color: #C9A227;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: #C9A227;
+    }
+    
+    /* Part 3: Social Media Icons */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      background: #C9A227;
+      color: #0A2540;
+      transform: translateY(-3px);
+    }
+    
+    /* Part 4: Terms & Policy */
+    .footer-policy ul {
+      list-style: none;
+    }
+    
+    .footer-policy li {
+      margin-bottom: 0.6rem;
+    }
+    
+    .footer-policy a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-policy a:hover {
+      color: #C9A227;
+    }
+    
+    .policy-badge {
+      background: rgba(201, 162, 39, 0.2);
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      display: inline-block;
+      margin-top: 0.8rem;
+    }
+    
+    /* Copyright Section */
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: #25D366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .footer {
+        padding: 2rem 1.5rem 1rem;
+      }
+      .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-<footer class="bg-navy text-white py-10 mt-8">
-  <div class="container mx-auto px-6 text-center">
-    <div class="flex flex-wrap justify-center gap-6 mb-4">
-      <a href="index.php" class="hover:gold-accent">Home</a>
-      <a href="about.php" class="hover:gold-accent">About</a>
-      <a href="services.php" class="hover:gold-accent">Services</a>
-      <a href="practice-areas.php" class="hover:gold-accent">Practice Areas</a>
-      <a href="med-arb-process.php" class="hover:gold-accent">Process</a>
-      <a href="experience.php" class="hover:gold-accent">Experience</a>
-      <a href="legal-awareness.php" class="hover:gold-accent">Legal Awareness</a>
-      <a href="articles.php" class="hover:gold-accent">Articles</a>
-      <a href="contact.php" class="hover:gold-accent">Contact</a>
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Part 1: Left Side Intro -->
+    <div class="footer-intro">
+      <h3>Med Arb International</h3>
+      <p>Global legal solutions with 30+ years of expertise in mediation, arbitration, and alternative dispute resolution. Trusted by 1000+ clients worldwide.</p>
+      <p class="tagline"><i class="fas fa-shield-alt"></i> Confidential & Professional</p>
     </div>
+    
+    <!-- Part 2: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="practice-areas.html">Practice Areas</a></li>
+        <li><a href="med-arb-process.html">Med-Arb Process</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <!-- Part 3: Follow Us - Social Media Icons -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.google.com/" target="_blank" class="social-icon" aria-label="Google">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank" class="social-icon" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <p style="font-size: 0.75rem; margin-top: 1rem; color: #94a3b8;">Connect with us for legal updates</p>
+    </div>
+    
+    <!-- Part 4: Terms & Policy -->
+    <div class="footer-policy">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Confidentiality Agreement</a></li>
+        <li><a href="#">Disclaimer</a></li>
+      </ul>
+      <div class="policy-badge">
+        <i class="fas fa-gavel"></i> ADR Expertise
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
     <p>© 2025 Med Arb International — Global Legal Solutions. All rights reserved.</p>
-    <p class="text-sm text-gray-400 mt-2">Confidentiality assured | Trusted by 1000+ clients worldwide</p>
+    <p style="margin-top: 0.5rem;">Resolving disputes with expertise, integrity & efficiency</p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp Button (Independent) -->
+<a href="https://wa.me/919841098484?text=Hello%20Med%20Arb%20International%2C%20I%20need%20legal%20assistance" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  // Footer independent JavaScript (if any needed)
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Footer loaded - Med Arb International');
+    // Any footer-specific interactions can be added here
+  });
+</script>
+
 </body>
 </html>
