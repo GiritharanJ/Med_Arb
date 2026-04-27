@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Legal Awareness Programs | Med Arb International - Free Legal Education Chennai</title>
+  <meta name="description" content="Free legal awareness programs in Chennai: Mediation vs Litigation, MSME Legal Toolkit, Senior Citizen Legal Camp, Income Tax Appeal Help. Join our community outreach programs.">
+  <meta name="keywords" content="free legal awareness Chennai, MSME dispute help, senior citizen legal camp, income tax appeal help, mediation awareness, ADR training, legal education">
+  <meta name="author" content="Med Arb International">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #F8F9FB;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #0A2540 0%, #1a3a5c 100%);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    
+    .hero-section h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-section p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: #C9A227;
+      color: #0A2540;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0A2540;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: #C9A227;
+      margin: 0.5rem auto 2rem;
+      border-radius: 2px;
+    }
+    
+    /* Tab Navigation */
+    .tab-container {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
+      overflow: hidden;
+    }
+    
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    
+    .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 1rem 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .tab-btn i {
+      font-size: 1.1rem;
+    }
+    
+    .tab-btn:hover {
+      background: #f1f5f9;
+      color: #C9A227;
+    }
+    
+    .tab-btn.active {
+      color: #C9A227;
+      border-bottom: 3px solid #C9A227;
+      background: white;
+    }
+    
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Program Cards */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .program-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      border: 1px solid #eef2f6;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    .program-number {
+      display: inline-block;
+      background: #0A2540;
+      color: #C9A227;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    
+    .program-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0A2540;
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-duration {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: #C9A227;
+      margin-bottom: 0.75rem;
+    }
+    
+    .program-duration i {
+      font-size: 0.75rem;
+    }
+    
+    .program-target {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    
+    .program-target i {
+      color: #C9A227;
+      margin-right: 0.3rem;
+    }
+    
+    .program-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .program-features {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+    
+    .program-features li {
+      font-size: 0.8rem;
+      color: #64748b;
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .program-features li i {
+      color: #22c55e;
+      font-size: 0.7rem;
+    }
+    
+    .register-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0A2540;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    
+    .register-link:hover {
+      background: #C9A227;
+      color: #0A2540;
+    }
+    
+    /* Upcoming Sessions Table */
+    .sessions-section {
+      margin-top: 3rem;
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .sessions-section h3 {
+      font-size: 1.3rem;
+      color: #0A2540;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .sessions-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .sessions-table th,
+    .sessions-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .sessions-table th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #0A2540;
+    }
+    
+    .sessions-table td {
+      color: #475569;
+      font-size: 0.9rem;
+    }
+    
+    .register-btn-small {
+      background: #C9A227;
+      color: #0A2540;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .register-btn-small:hover {
+      background: #0A2540;
+      color: white;
+    }
+    
+    .mode-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    
+    .mode-online { background: #dbeafe; color: #1e40af; }
+    .mode-offline { background: #dcfce7; color: #166534; }
+    .mode-hybrid { background: #fef3c7; color: #92400e; }
+    
+    /* CTA Section */
+    .cta-section {
+      background: #0A2540;
+      color: white;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      margin-top: 3rem;
+      border-radius: 1rem;
+    }
+    
+    .cta-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    
+    .cta-btn {
+      padding: 0.75rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .cta-btn-primary {
+      background: #C9A227;
+      color: #0A2540;
+    }
+    
+    .cta-btn-primary:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+    
+    .cta-btn-secondary {
+      border: 2px solid #C9A227;
+      color: white;
+    }
+    
+    .cta-btn-secondary:hover {
+      background: #C9A227;
+      color: #0A2540;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      .hero-section h1 {
+        font-size: 1.6rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+      .tab-btn {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+      }
+      .tab-content {
+        padding: 1rem;
+      }
+      .sessions-table th,
+      .sessions-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .tab-buttons {
+        flex-direction: column;
+      }
+      .tab-btn {
+        justify-content: flex-start;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .tab-btn.active {
+        border-bottom: 1px solid #C9A227;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Header Include -->
+<div id="medarb-header"></div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('medarb-header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading header:', error);
+    });
+</script>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-badge"><i class="fas fa-gavel"></i> Public Legal Education & Community Outreach</div>
+    <h1>Legal Awareness Programs</h1>
+    <p>Empowering citizens, students, and businesses with legal knowledge. Free and affordable programs to promote access to justice and alternative dispute resolution.</p>
+  </section>
+
+  <div class="container">
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="citizens"><i class="fas fa-users"></i> For Citizens</button>
+        <button class="tab-btn" data-tab="students"><i class="fas fa-graduation-cap"></i> For Students</button>
+        <button class="tab-btn" data-tab="corporates"><i class="fas fa-building"></i> For Corporates</button>
+      </div>
+      
+      <!-- Tab 1: For Citizens -->
+      <div id="citizens" class="tab-content active">
+        <div class="programs-grid">
+          <div class="program-card"><span class="program-number">Program 1</span><h3>Know Your Rights: Mediation vs Litigation</h3><div class="program-duration"><i class="far fa-clock"></i> 1 Hour | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: General public, RWAs, senior citizens</div><div class="program-desc">Free webinar covering when to mediate, cost comparison, where to file disputes. Learn the benefits of ADR over traditional litigation.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Free certificate of participation</li><li><i class="fas fa-check-circle"></i> Q&A with legal experts</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 2</span><h3>MSME Legal Toolkit</h3><div class="program-duration"><i class="far fa-clock"></i> 3 Hours | <i class="fas fa-map-marker-alt"></i> Chennai</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: MSME owners, traders, Tiruppur clusters</div><div class="program-desc">Half-day workshop on 43B(h) payments, MSME Samadhaan portal, arbitration clauses in purchase orders, and dispute resolution strategies.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Workshop materials provided</li><li><i class="fas fa-check-circle"></i> One-on-one query session</li></ul><a href="#" class="register-link"><i class="fas fa-ticket-alt"></i> Register (₹499)</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 3</span><h3>Senior Citizens: Property, Will & Dispute Resolution</h3><div class="program-duration"><i class="far fa-clock"></i> 2 Hours | <i class="fas fa-map-marker-alt"></i> Offline Camp</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Senior citizen associations, retirement homes</div><div class="program-desc">Will drafting basics, family mediation for property disputes, RERA disputes for senior citizens. Offline camp with legal aid support.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Free will template</li><li><i class="fas fa-check-circle"></i> One-on-one consultation available</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 4</span><h3>Women & Family Law Mediation</h3><div class="program-duration"><i class="far fa-clock"></i> 2 Hours | <i class="fas fa-globe"></i> Online/Offline</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Women, family courts, NGOs</div><div class="program-desc">Awareness session on domestic disputes, maintenance rights, custody mediation. Partnership with DLSA and family courts.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Confidential consultation</li><li><i class="fas fa-check-circle"></i> Referral to free mediation services</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 5</span><h3>RTI & Consumer Rights Workshop</h3><div class="program-duration"><i class="far fa-clock"></i> 2 Hours | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Students, consumer clubs, citizens</div><div class="program-desc">How to file RTI applications, Consumer Commission complaints, e-Daakhil portal usage for online complaint filing.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> RTI format guide</li><li><i class="fas fa-check-circle"></i> Live demo of e-Daakhil</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+        </div>
+      </div>
+      
+      <!-- Tab 2: For Students -->
+      <div id="students" class="tab-content">
+        <div class="programs-grid">
+          <div class="program-card"><span class="program-number">Program 6</span><h3>Law as a Career: Beyond Litigation</h3><div class="program-duration"><i class="far fa-clock"></i> 1 Hour | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Law colleges, CBSE +2 students</div><div class="program-desc">Webinar exploring careers in ADR, corporate counsel, PSU law officer paths, legal tech, and arbitration practice.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Career guidance booklet</li><li><i class="fas fa-check-circle"></i> Internship opportunities</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 7</span><h3>Cyber Law & Online Fraud Awareness</h3><div class="program-duration"><i class="far fa-clock"></i> 1 Hour | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Colleges, IT employees, RWAs</div><div class="program-desc">UPI frauds, data privacy rights, where to complain (cyber cell, NCH), preventive measures for online safety.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Cyber complaint guide</li><li><i class="fas fa-check-circle"></i> Real case studies</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 8</span><h3>Internship to Arbitration: ADR Career Map</h3><div class="program-duration"><i class="far fa-clock"></i> Full Day | <i class="fas fa-map-marker-alt"></i> Chennai</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Law students, young graduates</div><div class="program-desc">Student bootcamp covering: Moot court → internship → tribunal secretary → arbitrator pathway. Includes mock mediation session.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> MedArb Student Chapter enrollment</li><li><i class="fas fa-check-circle"></i> Certificate course on ADR</li></ul><a href="#" class="register-link"><i class="fas fa-ticket-alt"></i> Register (₹999)</a></div>
+        </div>
+      </div>
+      
+      <!-- Tab 3: For Corporates -->
+      <div id="corporates" class="tab-content">
+        <div class="programs-grid">
+          <div class="program-card"><span class="program-number">Program 9</span><h3>Contract Management for Non-Lawyers</h3><div class="program-duration"><i class="far fa-clock"></i> 3 Hours | <i class="fas fa-map-marker-alt"></i> Corporate Office</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Procurement, projects, finance teams</div><div class="program-desc">Practical session on reading contracts, identifying dispute triggers, notice drafting, and risk mitigation strategies.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Contract checklist provided</li><li><i class="fas fa-check-circle"></i> Customized for ONGC, L&T style contracts</li></ul><a href="#" class="register-link"><i class="fas fa-building"></i> Request Quote</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 10</span><h3>POSH + Workplace Mediation</h3><div class="program-duration"><i class="far fa-clock"></i> 3 Hours | <i class="fas fa-globe"></i> Online/Offline</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: HR teams, 50+ employee companies</div><div class="program-desc">Mandatory POSH awareness training + mediation as first step in workplace dispute resolution. IC training included.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> POSH compliance certificate</li><li><i class="fas fa-check-circle"></i> Model IC policy</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Request Quote</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 11</span><h3>Vigilance & Arbitration in PSUs</h3><div class="program-duration"><i class="far fa-clock"></i> 4 Hours | <i class="fas fa-map-marker-alt"></i> PSU Office</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Law officers, PSU executives</div><div class="program-desc">CVC guidelines, arbitration vs writ petitions, settlement committees, dispute resolution in ONGC, GAIL, NLC, Chennai Port.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> Case law compendium</li><li><i class="fas fa-check-circle"></i> Arbitration clause drafting</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Request Quote</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 12</span><h3>Income Tax: Refunds, Rectification & Appeals</h3><div class="program-duration"><i class="far fa-clock"></i> 2 Hours | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Salaried individuals, retirees</div><div class="program-desc">Section 154 rectification, ITAT basics, 43B(h) impact, leave encashment rules. Real case study examples.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> ITR filing tips</li><li><i class="fas fa-check-circle"></i> Appeal process guide</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+          
+          <div class="program-card"><span class="program-number">Program 13</span><h3>GST Disputes & Appeals Awareness</h3><div class="program-duration"><i class="far fa-clock"></i> 2 Hours | <i class="fas fa-globe"></i> Online</div><div class="program-target"><i class="fas fa-bullseye"></i> Target: Traders, CA firms, trade associations</div><div class="program-desc">GSTAT procedure, pre-deposit requirements, mediation in tax matters, appeal timelines and documentation.</div><ul class="program-features"><li><i class="fas fa-check-circle"></i> GST appeal format</li><li><i class="fas fa-check-circle"></i> Q&A with tax expert</li></ul><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Register Free</a></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Upcoming Sessions Table -->
+    <div class="sessions-section">
+      <h3><i class="fas fa-calendar-alt gold-accent"></i> Upcoming Sessions</h3>
+      <table class="sessions-table">
+        <thead><tr><th>Program Name</th><th>Duration</th><th>Mode</th><th>Who Can Attend</th><th>Next Date</th><th>Register</th></tr></thead>
+        <tbody>
+          <tr><td>Know Your Rights: Mediation vs Litigation</td><td>1 Hour</td><td><span class="mode-badge mode-online">Online</span></td><td>Public</td><td>May 15, 2025</td><td><a href="#" class="register-btn-small">Register</a></td></tr>
+          <tr><td>MSME Legal Toolkit</td><td>3 Hours</td><td><span class="mode-badge mode-offline">Chennai</span></td><td>MSME Owners</td><td>May 22, 2025</td><td><a href="#" class="register-btn-small">Register</a></td></tr>
+          <tr><td>Senior Citizens: Property & Will Camp</td><td>2 Hours</td><td><span class="mode-badge mode-offline">Offline</span></td><td>Senior Citizens</td><td>June 5, 2025</td><td><a href="#" class="register-btn-small">Register</a></td></tr>
+          <tr><td>Income Tax: Refunds & Appeals</td><td>2 Hours</td><td><span class="mode-badge mode-online">Online</span></td><td>Salaried/Retirees</td><td>June 12, 2025</td><td><a href="#" class="register-btn-small">Register</a></td></tr>
+          <tr><td>Cyber Law & Online Fraud Awareness</td><td>1 Hour</td><td><span class="mode-badge mode-online">Online</span></td><td>Students/Public</td><td>June 19, 2025</td><td><a href="#" class="register-btn-small">Register</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Community ADR Section -->
+    <div class="sessions-section" style="margin-top: 1.5rem;">
+      <h3><i class="fas fa-handshake gold-accent"></i> Community ADR Initiatives</h3>
+      <div class="programs-grid" style="margin-top: 1rem;">
+        <div class="program-card"><span class="program-number">Program 14</span><h3>Neighbourhood Dispute Mediation Camps</h3><div class="program-duration"><i class="far fa-clock"></i> Monthly | <i class="fas fa-map-marker-alt"></i> With DLSA</div><div class="program-desc">Property, water, nuisance disputes – free mediation camp. Model: Lok Adalat + MedArb panelists.</div><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Next Camp: May 28</a></div>
+        <div class="program-card"><span class="program-number">Program 15</span><h3>Legal Aid + Mediation Helpdesk</h3><div class="program-duration"><i class="far fa-clock"></i> Monthly | <i class="fas fa-map-marker-alt"></i> MedArb Office</div><div class="program-desc">Free 15-min consultation + mediation screening. CSR initiative for access to justice and case sourcing.</div><a href="#" class="register-link"><i class="fas fa-calendar-check"></i> Book Free Slot</a></div>
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h3>Want to organize a Legal Awareness Program?</h3>
+      <p>We customize programs for your organization, college, or community. Reach out to our outreach team.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="cta-btn cta-btn-primary"><i class="fas fa-envelope"></i> Request a Program</a>
+        <a href="https://wa.me/919841098484" target="_blank" class="cta-btn cta-btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer Include -->
+<div id="medarb-footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('medarb-footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading footer:', error);
+    });
+</script>
+
+<script>
+  // Tab switching functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab');
+        
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        
+        this.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
