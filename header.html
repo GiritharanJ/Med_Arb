@@ -1,81 +1,268 @@
-<?php
-// header.html - Shared header component for all pages
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Med Arb International | Expert Mediation & Arbitration Services</title>
-  <meta name="description" content="Global legal solutions for commercial disputes, employment conflicts, IP matters and construction disputes. 30+ years experience, 1000+ disputes resolved.">
-  <meta name="keywords" content="mediation, arbitration, Med-Arb, dispute resolution, commercial disputes, international arbitration, legal mediator">
-  <meta name="author" content="Med Arb International">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Med Arb International | Header Component</title>
   <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background-color: #F8F9FB; }
-    .gold-accent { color: #C9A227; }
-    .bg-gold { background-color: #C9A227; }
-    .bg-navy { background-color: #0A2540; }
-    .text-navy { color: #0A2540; }
-    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000; transition: 0.2s; }
-    .whatsapp-float:hover { background: #128C7E; transform: scale(1.05); }
-    .sticky-consult { position: fixed; top: 20px; right: 20px; background: #0A2540; color: white; padding: 10px 24px; border-radius: 40px; font-weight: 600; z-index: 999; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s; }
-    .sticky-consult:hover { background: #C9A227; color: #0A2540; }
-    @media (max-width: 640px) { .sticky-consult { padding: 6px 14px; font-size: 13px; top: 10px; right: 10px; } .whatsapp-float { width: 50px; height: 50px; font-size: 26px; } }
-    .card-hover:hover { transform: translateY(-6px); transition: 0.25s ease; box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); }
-    .hero-bg {
-      background-image: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), url('hero.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .service-checklist li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; }
-    .service-checklist li i { margin-top: 0.2rem; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #F8F9FB;
+    }
+    
+    /* Navigation Styles */
+    .nav-container {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-icon {
+      font-size: 1.8rem;
+      color: #0A2540;
+    }
+    
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0A2540;
+    }
+    
+    .logo-text span {
+      color: #C9A227;
+    }
+    
+    /* Desktop Navigation */
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      font-size: 0.95rem;
+    }
+    
+    .nav-links a:hover {
+      color: #C9A227;
+    }
+    
+    .contact-btn {
+      background: #0A2540;
+      color: white !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      transition: all 0.2s ease !important;
+    }
+    
+    .contact-btn:hover {
+      background: #C9A227;
+      color: #0A2540 !important;
+    }
+    
+    /* Sticky Book Consultation Button */
+    .sticky-book {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: #0A2540;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .sticky-book:hover {
+      background: #C9A227;
+      color: #0A2540;
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #0A2540;
+      cursor: pointer;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .mobile-menu a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+    }
+    
+    .mobile-menu a:hover {
+      color: #C9A227;
+    }
+    
+    .mobile-contact {
+      background: #0A2540;
+      color: white !important;
+      text-align: center;
+      padding: 0.75rem !important;
+      border-radius: 50px;
+      margin-top: 0.5rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-inner {
+        padding: 0.8rem 1.5rem;
+      }
+      .sticky-book {
+        top: 0.8rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      .logo-icon {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .sticky-book span {
+        display: none;
+      }
+      .sticky-book {
+        padding: 0.5rem 0.8rem;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<a href="contact.html" class="sticky-consult hidden md:flex items-center gap-2"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+<!-- Sticky Book Consultation Button -->
+<a href="contact.html" class="sticky-book">
+  <i class="fas fa-calendar-check"></i>
+  <span>Book Consultation</span>
+</a>
 
-<nav class="bg-white shadow-md sticky top-0 z-50">
-  <div class="container mx-auto px-5 py-4 flex flex-wrap justify-between items-center">
-    <div class="flex items-center space-x-2">
-      <i class="fas fa-gavel text-2xl text-navy"></i>
-      <span class="font-bold text-xl text-navy">Med Arb <span class="gold-accent">International</span></span>
+<!-- Main Navigation -->
+<div class="nav-container">
+  <div class="nav-inner">
+    <div class="logo">
+      <i class="fas fa-gavel logo-icon"></i>
+      <span class="logo-text">Med Arb <span>International</span></span>
     </div>
-    <div class="hidden md:flex space-x-6 text-gray-700 font-medium">
-      <a href="index.php" class="hover:gold-accent">Home</a>
-      <a href="about.php" class="hover:gold-accent">About</a>
-      <a href="services.php" class="hover:gold-accent">Services</a>
-      <a href="practice-areas.php" class="hover:gold-accent">Practice Areas</a>
-      <a href="med-arb-process.php" class="hover:gold-accent">Process</a>
-      <a href="experience.php" class="hover:gold-accent">Experience</a>
-      <a href="legal-awareness.php" class="hover:gold-accent">Legal Awareness</a>
-      <a href="articles.php" class="hover:gold-accent">Articles</a>
-      <a href="contact.php" class="bg-navy text-white px-5 py-2 rounded-full hover:bg-gold hover:text-navy transition">Contact</a>
+    
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="practice-areas.html">Practice Areas</a>
+      <a href="med-arb-process.html">Med-Arb Process</a>
+      <a href="experience.html">Experience</a>
+      <a href="legal-awareness.html">Legal Awareness</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html" class="contact-btn">Contact</a>
     </div>
-    <div class="md:hidden">
-      <button id="mobileMenuBtn" class="text-navy text-2xl"><i class="fas fa-bars"></i></button>
-    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-5 pb-4 flex flex-col space-y-3">
-    <a href="index.php" class="py-2">Home</a>
-    <a href="about.php" class="py-2">About</a>
-    <a href="services.php" class="py-2">Services</a>
-    <a href="practice-areas.php" class="py-2">Practice Areas</a>
-    <a href="med-arb-process.php" class="py-2">Process</a>
-    <a href="experience.php" class="py-2">Experience</a>
-    <a href="legal-awareness.php" class="py-2">Legal Awareness</a>
-    <a href="articles.php" class="py-2">Articles</a>
-    <a href="contact.php" class="bg-navy text-white px-4 py-2 rounded-full text-center">Contact</a>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="practice-areas.html">Practice Areas</a>
+    <a href="med-arb-process.html">Med-Arb Process</a>
+    <a href="experience.html">Experience</a>
+    <a href="legal-awareness.html">Legal Awareness</a>
+    <a href="articles.html">Articles</a>
+    <a href="contact.html" class="mobile-contact">Contact</a>
   </div>
-</nav>
+</div>
 
 <script>
-  document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
-    document.getElementById('mobileMenu')?.classList.toggle('hidden');
+  // Header independent JavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', function() {
+        if (mobileMenu.style.display === 'flex') {
+          mobileMenu.style.display = 'none';
+        } else {
+          mobileMenu.style.display = 'flex';
+        }
+      });
+    }
   });
 </script>
+
+</body>
+</html>
