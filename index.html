@@ -29,19 +29,16 @@
       overflow: hidden;
     }
     
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><path fill="white" d="M100,0 L130,70 L200,70 L145,115 L165,190 L100,145 L35,190 L55,115 L0,70 L70,70 Z"/></svg>');
-      background-size: 60px;
-      background-repeat: repeat;
-      pointer-events: none;
-    }
+    .hero {
+      background: linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85)), url('assets/images/hero.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     
+      color: white;
+      padding: 6rem 2rem;
+      position: relative;
+    }
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
