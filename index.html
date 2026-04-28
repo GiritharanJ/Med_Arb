@@ -387,10 +387,7 @@
 <!-- Include Header Component -->
 <div id="medarb-header"></div>
 
-
-<script>
-  fetch('header.html').then(r=>r.text()).then(d=>{document.body.insertAdjacentHTML('afterbegin',d);const s=document.querySelectorAll('#medarbMobileBtn script');s.forEach(ss=>{const ns=document.createElement('script');ns.textContent=ss.textContent;document.body.appendChild(ns);ss.remove();});});
-</script>
+<script src="load-header.js"></script>
 
   
 
