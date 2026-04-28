@@ -9,407 +9,158 @@
   <meta name="author" content="Med Arb International">
   
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #F8F9FB;
     }
-    
-    /* Hero Section */
+
+    /* Hero */
     .hero {
-      background: linear-gradient(rgba(10, 37, 64, 0.15), rgba(10, 37, 64, 0.15)), url('assets/images/hero.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: linear-gradient(rgba(10,37,64,0.40), rgba(10,37,64,0.55)),
+                  url('assets/images/hero.jpg') center/cover no-repeat;
       color: white;
-      padding: 6rem 2rem;
-      position: relative;
+      padding: 7rem 2rem;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    .hero-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.18; }
+    .hero .gold { color: #C9A227; }
+    .hero-subtitle { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.25rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    
-    .hero .gold {
-      color: #C9A227;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: #cbd5e1;
-      margin-bottom: 2rem;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
     .btn-primary {
-      background: #C9A227;
-      color: #0A2540;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
+      background: #C9A227; color: #0A2540;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 0.5rem;
       transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
     }
-    
-    .btn-primary:hover {
-      background: white;
-      transform: translateY(-2px);
-    }
-    
+    .btn-primary:hover { background: #fff; transform: translateY(-2px); }
+
     .btn-secondary {
-      border: 2px solid white;
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
+      border: 2px solid #fff; color: #fff;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; transition: all 0.2s;
     }
-    
-    .btn-secondary:hover {
-      background: white;
-      color: #0A2540;
-    }
-    
-    /* Stats Section */
-    .stats-section {
-      background: white;
-      padding: 3rem 2rem;
-    }
-    
+    .btn-secondary:hover { background: #fff; color: #0A2540; }
+
+    /* Stats */
+    .stats-section { background: #fff; padding: 3rem 2rem; }
     .stats-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; text-align: center;
     }
-    
-    .stat-item i {
-      font-size: 2.5rem;
-      color: #C9A227;
-      margin-bottom: 0.5rem;
-    }
-    
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #0A2540;
-    }
-    
-    .stat-label {
-      color: #64748b;
-      font-size: 0.9rem;
-    }
-    
-    /* Services Checklist Section */
-    .services-section {
-      background: #F8F9FB;
-      padding: 4rem 2rem;
-    }
-    
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #0A2540;
-      margin-bottom: 0.5rem;
-    }
-    
-    .section-divider {
-      width: 60px;
-      height: 4px;
-      background: #C9A227;
-      margin: 0.5rem auto 2rem;
-    }
-    
+    .stat-item i { font-size: 2.4rem; color: #C9A227; margin-bottom: 0.5rem; display: block; }
+    .stat-number { font-size: 2.1rem; font-weight: 700; color: #0A2540; }
+    .stat-label { color: #64748b; font-size: 0.88rem; }
+
+    /* Services */
+    .services-section { background: #F8F9FB; padding: 4rem 2rem; }
+    .section-title { text-align: center; font-size: 2.1rem; font-weight: 700; color: #0A2540; margin-bottom: 0.4rem; }
+    .section-divider { width: 56px; height: 4px; background: #C9A227; margin: 0.4rem auto 2rem; border-radius: 2px; }
+
     .services-grid {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
+      max-width: 1400px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.6rem;
     }
-    
     .service-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.2s;
+      background: #fff; border-radius: 1rem; padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.22s;
     }
-    
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
-    
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.09); }
     .service-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1.3rem;
-      color: #0A2540;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.7rem;
+      font-size: 1.2rem; color: #0A2540;
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
       border-bottom: 2px solid #C9A227;
     }
-    
-    .service-card h3 i {
-      color: #C9A227;
-      font-size: 1.5rem;
-    }
-    
-    .service-list {
-      list-style: none;
-    }
-    
+    .service-card h3 i { color: #C9A227; }
+    .service-list { list-style: none; }
     .service-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
-      color: #334155;
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      margin-bottom: 0.7rem; font-size: 0.88rem; color: #334155;
     }
-    
-    .service-list li i {
-      color: #22c55e;
-      font-size: 0.9rem;
-      margin-top: 0.2rem;
-    }
-    
-    .whatsapp-cta {
-      text-align: center;
-      margin: 2rem 0 1rem;
-    }
-    
+    .service-list li i { color: #22c55e; margin-top: 0.18rem; flex-shrink: 0; }
+
+    /* WhatsApp CTA */
+    .whatsapp-cta { text-align: center; margin: 2rem 0 1rem; }
     .whatsapp-btn {
-      background: #25D366;
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 600;
-      transition: all 0.2s;
+      background: #25D366; color: #fff;
+      padding: 0.8rem 2rem; border-radius: 50px;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.7rem;
+      font-weight: 600; transition: all 0.2s;
     }
-    
-    .whatsapp-btn:hover {
-      background: #128C7E;
-      transform: scale(1.02);
-    }
-    
-    /* Founder Section */
-    .founder-section {
-      background: white;
-      padding: 4rem 2rem;
-    }
-    
+    .whatsapp-btn:hover { background: #128C7E; transform: scale(1.02); }
+
+    /* Founder */
+    .founder-section { background: #fff; padding: 4rem 2rem; }
     .founder-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      flex-wrap: wrap;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;
     }
-    
-    .founder-image {
-      flex: 1;
-      min-width: 250px;
-    }
-    
-    .founder-image img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
-    }
-    
-    .founder-content {
-      flex: 1;
-    }
-    
-    .founder-content h2 {
-      font-size: 2rem;
-      color: #0A2540;
-      margin-bottom: 0.5rem;
-    }
-    
-    .founder-title {
-      color: #C9A227;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .founder-content p {
-      color: #475569;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    
-    .read-more {
-      color: #C9A227;
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid #C9A227;
-      padding-bottom: 0.2rem;
-    }
-    
-    /* Why Choose Us */
-    .why-choose {
-      background: #0A2540;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    
+    .founder-image { flex: 1; min-width: 240px; }
+    .founder-image img { width: 100%; border-radius: 1rem; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.14); }
+    .founder-content { flex: 1; }
+    .founder-content h2 { font-size: 1.9rem; color: #0A2540; margin-bottom: 0.4rem; }
+    .founder-title { color: #C9A227; font-weight: 600; margin-bottom: 1rem; }
+    .founder-content p { color: #475569; line-height: 1.65; margin-bottom: 1.25rem; }
+    .read-more { color: #C9A227; text-decoration: none; font-weight: 600; border-bottom: 2px solid #C9A227; padding-bottom: 0.2rem; }
+
+    /* Why Choose */
+    .why-choose { background: #0A2540; color: #fff; padding: 4rem 2rem; text-align: center; }
     .why-grid {
-      max-width: 1000px;
-      margin: 2rem auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      max-width: 960px; margin: 2rem auto 0;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
     }
-    
-    .why-item i {
-      font-size: 2.5rem;
-      color: #C9A227;
-      margin-bottom: 1rem;
-    }
-    
-    .why-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
+    .why-item i { font-size: 2.4rem; color: #C9A227; margin-bottom: 0.75rem; display: block; }
+    .why-item h3 { font-size: 1.15rem; }
+
     /* Final CTA */
-    .final-cta {
-      background: #F1F5F9;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    
-    .final-cta h2 {
-      font-size: 2rem;
-      color: #0A2540;
-      margin-bottom: 1.5rem;
-    }
-    
+    .final-cta { background: #F1F5F9; text-align: center; padding: 4rem 2rem; }
+    .final-cta h2 { font-size: 1.9rem; color: #0A2540; margin-bottom: 1.4rem; }
+
     /* Responsive */
     @media (max-width: 900px) {
-      .hero h1 { font-size: 2rem; }
-      .stats-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+      .stats-container { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
       .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .founder-container { flex-direction: column; text-align: center; }
-      .hero { padding: 3rem 1.5rem; }
+      .hero { padding: 4rem 1.5rem; }
     }
-    
     @media (max-width: 480px) {
       .stats-container { grid-template-columns: 1fr; }
       .hero-buttons { flex-direction: column; align-items: center; }
-      .btn-primary, .btn-secondary { width: 100%; max-width: 250px; justify-content: center; }
-      .section-title { font-size: 1.8rem; }
+      .btn-primary, .btn-secondary { width: 100%; max-width: 260px; justify-content: center; }
+      .section-title { font-size: 1.75rem; }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- Header placeholder -->
+<!-- ═══════════════════════════════════════
+     HEADER — loaded + fully initialised
+     by load-header.js (fetch + JS wiring)
+═══════════════════════════════════════ -->
 <div id="medarb-header"></div>
-
-<!-- Load header HTML (scripts inside fetched HTML are stripped by browser — see below) -->
 <script src="load-header.js"></script>
-
-<!-- =====================================================
-     MOBILE MENU INIT
-     Runs AFTER load-header.js injects the header HTML.
-     Polls every 50ms until the button exists, then wires
-     up all handlers and stops polling.
-====================================================== -->
-<script>
-  (function () {
-    function initMobileMenu() {
-      var btn  = document.getElementById('medarbMobileBtn');
-      var menu = document.getElementById('medarbMobileMenu');
-      if (!btn || !menu) return; // not ready yet — keep polling
-
-      // Toggle open/close
-      btn.onclick = function (e) {
-        e.stopPropagation();
-        menu.classList.toggle('active');
-      };
-
-      // Close when a nav link is clicked
-      menu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          menu.classList.remove('active');
-        });
-      });
-
-      // Close when clicking anywhere outside the menu/button
-      document.addEventListener('click', function (e) {
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-          menu.classList.remove('active');
-        }
-      });
-
-      // Close on desktop resize
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 900) {
-          menu.classList.remove('active');
-        }
-      });
-
-      clearInterval(poll); // header is ready, stop polling
-    }
-
-    // Poll every 50ms until header elements appear in the DOM
-    var poll = setInterval(initMobileMenu, 50);
-  })();
-</script>
+<!-- No extra mobile-menu JS needed here —
+     load-header.js handles everything.  -->
 
 <main>
-  <!-- Hero Section -->
+
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>Resolving Disputes with <span class="gold">Expertise, Integrity & Efficiency</span></h1>
-      <p class="hero-subtitle">30+ years legal experience • 1000+ disputes resolved</p>
+      <p class="hero-subtitle">30+ years legal experience &nbsp;•&nbsp; 1000+ disputes resolved</p>
       <div class="hero-buttons">
         <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Consultation</a>
         <a href="contact.html" class="btn-secondary">Contact Now</a>
@@ -427,17 +178,17 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section class="services-section">
     <div class="section-title">Our Core Services</div>
     <div class="section-divider"></div>
-    
+
     <div class="whatsapp-cta">
-      <p style="margin-bottom: 1rem; color: #475569;">MedArb International – Online Legal & ADR Services. Tick what you need. We'll handle the rest. <strong>60-120 day resolution focus.</strong></p>
-      <a href="https://wa.me/919841098484" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Start in 2 minutes - WhatsApp us your ticks → +91 98410 98484</a>
-      <p style="margin-top: 0.75rem; font-size: 0.85rem; color: #64748b;">President, Thillainayagam Sankaravel</p>
+      <p style="margin-bottom:1rem;color:#475569;">MedArb International – Online Legal & ADR Services. Tick what you need. We'll handle the rest. <strong>60–120 day resolution focus.</strong></p>
+      <a href="https://wa.me/919841098484" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Start in 2 minutes – WhatsApp us your ticks → +91 98410 98484</a>
+      <p style="margin-top:0.7rem;font-size:0.83rem;color:#64748b;">President, Thillainayagam Sankaravel</p>
     </div>
-    
+
     <div class="services-grid">
       <div class="service-card"><h3><i class="fas fa-gavel"></i> Disputes & ADR</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Commercial Mediation - Online</li><li><i class="fas fa-check-circle"></i> Online Arbitration - Domestic/Cross-border</li><li><i class="fas fa-check-circle"></i> Med-Arb Hybrid for B2B Contracts</li><li><i class="fas fa-check-circle"></i> Debt Recovery & Legal Notice + Settlement</li><li><i class="fas fa-check-circle"></i> Domain/IP/E-commerce Disputes</li></ul></div>
       <div class="service-card"><h3><i class="fas fa-file-contract"></i> Business & Contracts</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Contract Drafting/Review - MSA, SLA, NDA</li><li><i class="fas fa-check-circle"></i> Startup Legal: Incorporation, ESOP, SAFE</li><li><i class="fas fa-check-circle"></i> Due Diligence for M&A/Vendor Onboarding</li><li><i class="fas fa-check-circle"></i> Data Privacy - DPDP/GDPR Compliance</li><li><i class="fas fa-check-circle"></i> IP: Trademark Filing & Infringement</li></ul></div>
@@ -447,22 +198,23 @@
     </div>
   </section>
 
-  <!-- Founder Section -->
+  <!-- Founder -->
   <section class="founder-section">
     <div class="founder-container">
       <div class="founder-image"><img src="https://placehold.co/500x500/0A2540/white?text=Thillainayagam+S" alt="Thillainayagam Sankaravel"></div>
       <div class="founder-content">
         <h2>Thillainayagam Sankaravel</h2>
         <div class="founder-title">President, Med Arb International</div>
-        <p>With over 30+ years legal experience and 15 years specialized in ADR, mediation and arbitration. Recognized for international legal initiatives and civil/criminal expertise. He has fostered a legacy of resolving over 1000 disputes with finesse.</p>
+        <p>With over 30+ years legal experience and 15 years specialised in ADR, mediation and arbitration. Recognised for international legal initiatives and civil/criminal expertise. He has fostered a legacy of resolving over 1000 disputes with finesse.</p>
         <a href="about.html" class="read-more">Read full profile →</a>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- Why Choose -->
   <section class="why-choose">
-    <div class="section-title" style="color: white;">Why Choose Med Arb International?</div>
+    <div class="section-title" style="color:#fff;">Why Choose Med Arb International?</div>
+    <div class="section-divider"></div>
     <div class="why-grid">
       <div class="why-item"><i class="fas fa-balance-scale"></i><h3>Neutral & Professional</h3></div>
       <div class="why-item"><i class="fas fa-clock"></i><h3>Faster than Court Litigation</h3></div>
@@ -473,42 +225,19 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <h2>Have a dispute? Let's resolve it efficiently.</h2>
-    <a href="contact.html" class="btn-primary" style="background:#0A2540; color:white;">Schedule Consultation</a>
+    <a href="contact.html" class="btn-primary" style="background:#0A2540;color:#fff;">Schedule Consultation</a>
   </section>
+
 </main>
 
-<!-- Footer placeholder -->
+<!-- Footer -->
 <div id="medarb-footer"></div>
-
 <script>
   fetch('footer.html')
-    .then(function (r) { return r.text(); })
-    .then(function (data) {
-      document.getElementById('medarb-footer').innerHTML = data;
-    })
-    .catch(function (err) {
-      console.error('Error loading footer:', err);
-      document.getElementById('medarb-footer').innerHTML =
-        '<div style="background:#0A2540;color:white;padding:2rem;text-align:center;">Med Arb International</div>';
-    });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        var href = this.getAttribute('href');
-        if (href !== '#' && href !== '#contact') {
-          var target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  });
+    .then(function(r){ return r.text(); })
+    .then(function(html){ document.getElementById('medarb-footer').innerHTML = html; })
+    .catch(function(){ document.getElementById('medarb-footer').innerHTML =
+      '<div style="background:#0A2540;color:#fff;padding:2rem;text-align:center;">Med Arb International</div>'; });
 </script>
 
 </body>
