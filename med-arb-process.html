@@ -385,17 +385,7 @@
 
 <!-- Header Include -->
 <div id="medarb-header"></div>
-
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('medarb-header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error loading header:', error);
-    });
-</script>
+<script src="load-header.js"></script>
 
 <main>
   <!-- Hero Section -->
