@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Med Arb International | Header Component</title>
   <style>
-    /* All header styles are scoped with .medarb-header class to prevent conflicts */
     .medarb-header {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
-    /* Navigation Styles - All prefixed with medarb- */
+
     .medarb-nav-container {
       background: white;
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -22,7 +20,7 @@
       z-index: 1000;
       width: 100%;
     }
-    
+
     .medarb-nav-inner {
       max-width: 1400px;
       margin: 0 auto;
@@ -32,37 +30,36 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    
+
     .medarb-logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
     }
-    
+
     .medarb-logo-icon {
       font-size: 1.8rem;
       color: #0A2540;
     }
-    
+
     .medarb-logo-text {
       font-size: 1.4rem;
       font-weight: 700;
       color: #0A2540;
     }
-    
+
     .medarb-logo-text span {
       color: #C9A227;
     }
-    
-    /* Desktop Navigation */
+
     .medarb-nav-links {
       display: flex;
       gap: 1.5rem;
       align-items: center;
       flex-wrap: wrap;
     }
-    
+
     .medarb-nav-links a {
       text-decoration: none;
       color: #4a5568;
@@ -71,12 +68,11 @@
       font-size: 0.95rem;
       padding: 0.5rem 0;
     }
-    
+
     .medarb-nav-links a:hover {
       color: #C9A227;
     }
-    
-    /* Contact Button */
+
     .medarb-contact-btn {
       background: #0A2540;
       color: white !important;
@@ -86,14 +82,13 @@
       font-size: 0.95rem !important;
       font-weight: 600 !important;
     }
-    
+
     .medarb-contact-btn:hover {
       background: #C9A227;
       color: #0A2540 !important;
       transform: translateY(-2px);
     }
-    
-    /* Mobile Menu Button */
+
     .medarb-mobile-btn {
       display: none;
       background: #0A2540;
@@ -105,13 +100,12 @@
       border-radius: 8px;
       transition: all 0.2s;
     }
-    
+
     .medarb-mobile-btn:hover {
       background: #C9A227;
       color: #0A2540;
     }
-    
-    /* Mobile Menu - Hidden by default */
+
     .medarb-mobile-menu {
       display: none;
       background: white;
@@ -121,11 +115,11 @@
       gap: 0.5rem;
       width: 100%;
     }
-    
+
     .medarb-mobile-menu.active {
       display: flex;
     }
-    
+
     .medarb-mobile-menu a {
       text-decoration: none;
       color: #4a5568;
@@ -135,17 +129,17 @@
       border-bottom: 1px solid #f0f0f0;
       transition: all 0.2s;
     }
-    
+
     .medarb-mobile-menu a:last-child {
       border-bottom: none;
     }
-    
+
     .medarb-mobile-menu a:hover {
       color: #C9A227;
       padding-left: 0.5rem;
       background: #f8fafc;
     }
-    
+
     .medarb-mobile-contact {
       background: #0A2540;
       color: white !important;
@@ -154,13 +148,12 @@
       border-radius: 50px;
       font-weight: 600 !important;
     }
-    
+
     .medarb-mobile-contact:hover {
       background: #C9A227;
       color: #0A2540 !important;
     }
-    
-    /* Responsive Breakpoints */
+
     @media (max-width: 1024px) {
       .medarb-nav-links { gap: 1rem; }
       .medarb-nav-links a { font-size: 0.85rem; }
@@ -168,14 +161,14 @@
       .medarb-logo-icon { font-size: 1.5rem; }
       .medarb-contact-btn { padding: 0.5rem 1.2rem !important; font-size: 0.85rem !important; }
     }
-    
+
     @media (max-width: 900px) {
       .medarb-nav-links { display: none; }
       .medarb-mobile-btn { display: block; }
       .medarb-nav-inner { padding: 0.8rem 1.2rem; }
       .medarb-logo-text { font-size: 1.1rem; }
     }
-    
+
     @media (max-width: 480px) {
       .medarb-nav-inner { padding: 0.7rem 1rem; }
       .medarb-mobile-btn { font-size: 1.3rem; padding: 0.4rem 0.8rem; }
@@ -190,6 +183,14 @@
 </head>
 <body>
 
+<!-- =====================================================
+     NOTE: No <script> block here intentionally.
+     Mobile menu JS lives in index.html (and every other
+     page) so it runs AFTER this HTML is injected via
+     fetch + innerHTML — where scripts are silently
+     stripped by the browser.
+====================================================== -->
+
 <div class="medarb-header">
   <div class="medarb-nav-container">
     <div class="medarb-nav-inner">
@@ -197,7 +198,7 @@
         <i class="fas fa-gavel medarb-logo-icon"></i>
         <span class="medarb-logo-text">Med Arb <span>International</span></span>
       </a>
-      
+
       <div class="medarb-nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -209,12 +210,12 @@
         <a href="articles.html">Articles</a>
         <a href="contact.html" class="medarb-contact-btn">Contact</a>
       </div>
-      
+
       <button class="medarb-mobile-btn" id="medarbMobileBtn">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-    
+
     <div class="medarb-mobile-menu" id="medarbMobileMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -228,95 +229,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  // ============================================
-  // FIXED HEADER JAVASCRIPT - WORKS WITH DYNAMIC LOADING
-  // ============================================
-  (function() {
-    'use strict';
-    
-    // Function to setup mobile menu
-    function setupMobileMenu() {
-      // Get mobile menu elements
-      const mobileBtn = document.getElementById('medarbMobileBtn');
-      const mobileMenu = document.getElementById('medarbMobileMenu');
-      
-      // If elements don't exist, exit
-      if (!mobileBtn || !mobileMenu) {
-        console.log('MedArb Header: Elements not ready yet');
-        return false;
-      }
-      
-      console.log('MedArb Header: Setting up mobile menu');
-      
-      // Remove any existing click handlers by creating fresh elements
-      const newBtn = mobileBtn.cloneNode(true);
-      mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
-      const finalBtn = document.getElementById('medarbMobileBtn');
-      const finalMenu = document.getElementById('medarbMobileMenu');
-      
-      // Simple direct click handler - most reliable approach
-      finalBtn.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        if (finalMenu.classList.contains('active')) {
-          finalMenu.classList.remove('active');
-          console.log('Menu closed');
-        } else {
-          finalMenu.classList.add('active');
-          console.log('Menu opened');
-        }
-        return false;
-      };
-      
-      // Close menu when clicking on links
-      const allLinks = finalMenu.querySelectorAll('a');
-      allLinks.forEach(function(link) {
-        link.onclick = function() {
-          finalMenu.classList.remove('active');
-        };
-      });
-      
-      // Close menu when clicking outside
-      document.body.addEventListener('click', function(e) {
-        if (finalMenu.classList.contains('active')) {
-          if (!finalMenu.contains(e.target) && !finalBtn.contains(e.target)) {
-            finalMenu.classList.remove('active');
-          }
-        }
-      });
-      
-      // Close menu on window resize
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 900) {
-          finalMenu.classList.remove('active');
-        }
-      });
-      
-      return true;
-    }
-    
-    // Try to setup immediately
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setupMobileMenu();
-      });
-    } else {
-      setupMobileMenu();
-    }
-    
-    // Also try after a small delay (for dynamic loading scenarios)
-    setTimeout(function() {
-      setupMobileMenu();
-    }, 100);
-    
-    setTimeout(function() {
-      setupMobileMenu();
-    }, 500);
-  })();
-</script>
 
 </body>
 </html>
