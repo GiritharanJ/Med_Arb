@@ -22,27 +22,19 @@
     
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #0A2540 0%, #1a3a5c 100%);
-      color: white;
-      padding: 5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh; /* or 100vh for full screen */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .hero {
       background: linear-gradient(rgba(10, 37, 64, 0.15), rgba(10, 37, 64, 0.15)), url('assets/images/hero.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-    
       color: white;
       padding: 6rem 2rem;
       position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -338,45 +330,19 @@
     
     /* Responsive */
     @media (max-width: 900px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      .why-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .founder-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero {
-        padding: 3rem 1.5rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .stats-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .founder-container { flex-direction: column; text-align: center; }
+      .hero { padding: 3rem 1.5rem; }
     }
     
     @media (max-width: 480px) {
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-primary, .btn-secondary {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
+      .stats-container { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; max-width: 250px; justify-content: center; }
+      .section-title { font-size: 1.8rem; }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -384,12 +350,59 @@
 </head>
 <body>
 
-<!-- Include Header Component -->
+<!-- Header placeholder -->
 <div id="medarb-header"></div>
 
+<!-- Load header HTML (scripts inside fetched HTML are stripped by browser — see below) -->
 <script src="load-header.js"></script>
 
-  
+<!-- =====================================================
+     MOBILE MENU INIT
+     Runs AFTER load-header.js injects the header HTML.
+     Polls every 50ms until the button exists, then wires
+     up all handlers and stops polling.
+====================================================== -->
+<script>
+  (function () {
+    function initMobileMenu() {
+      var btn  = document.getElementById('medarbMobileBtn');
+      var menu = document.getElementById('medarbMobileMenu');
+      if (!btn || !menu) return; // not ready yet — keep polling
+
+      // Toggle open/close
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        menu.classList.toggle('active');
+      };
+
+      // Close when a nav link is clicked
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('active');
+        });
+      });
+
+      // Close when clicking anywhere outside the menu/button
+      document.addEventListener('click', function (e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          menu.classList.remove('active');
+        }
+      });
+
+      // Close on desktop resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) {
+          menu.classList.remove('active');
+        }
+      });
+
+      clearInterval(poll); // header is ready, stop polling
+    }
+
+    // Poll every 50ms until header elements appear in the DOM
+    var poll = setInterval(initMobileMenu, 50);
+  })();
+</script>
 
 <main>
   <!-- Hero Section -->
@@ -414,7 +427,7 @@
     </div>
   </section>
 
-  <!-- Services Section with Checklist -->
+  <!-- Services Section -->
   <section class="services-section">
     <div class="section-title">Our Core Services</div>
     <div class="section-divider"></div>
@@ -426,19 +439,10 @@
     </div>
     
     <div class="services-grid">
-      <!-- Category 1 -->
       <div class="service-card"><h3><i class="fas fa-gavel"></i> Disputes & ADR</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Commercial Mediation - Online</li><li><i class="fas fa-check-circle"></i> Online Arbitration - Domestic/Cross-border</li><li><i class="fas fa-check-circle"></i> Med-Arb Hybrid for B2B Contracts</li><li><i class="fas fa-check-circle"></i> Debt Recovery & Legal Notice + Settlement</li><li><i class="fas fa-check-circle"></i> Domain/IP/E-commerce Disputes</li></ul></div>
-      
-      <!-- Category 2 -->
       <div class="service-card"><h3><i class="fas fa-file-contract"></i> Business & Contracts</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Contract Drafting/Review - MSA, SLA, NDA</li><li><i class="fas fa-check-circle"></i> Startup Legal: Incorporation, ESOP, SAFE</li><li><i class="fas fa-check-circle"></i> Due Diligence for M&A/Vendor Onboarding</li><li><i class="fas fa-check-circle"></i> Data Privacy - DPDP/GDPR Compliance</li><li><i class="fas fa-check-circle"></i> IP: Trademark Filing & Infringement</li></ul></div>
-      
-      <!-- Category 3 -->
       <div class="service-card"><h3><i class="fas fa-users"></i> HR, Labour & Compliance</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Employment Contracts & HR Policies</li><li><i class="fas fa-check-circle"></i> PF, ESI, PT, Gratuity Advisory</li><li><i class="fas fa-check-circle"></i> POSH Compliance & Training</li><li><i class="fas fa-check-circle"></i> Labour Law Licensing - CLRA, Shops Act</li><li><i class="fas fa-check-circle"></i> Employee Grievance Mediation</li></ul></div>
-      
-      <!-- Category 4 -->
       <div class="service-card"><h3><i class="fas fa-chart-line"></i> Tax & Regulatory</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> GST Filing & Notice Replies</li><li><i class="fas fa-check-circle"></i> Income Tax - ITR, Scrutiny, NRI Tax</li><li><i class="fas fa-check-circle"></i> TDS/TCS & 15CA/CB</li><li><i class="fas fa-check-circle"></i> ROC/MCA Annual Filings</li><li><i class="fas fa-check-circle"></i> FEMA, FDI, RBI Advisory</li></ul></div>
-      
-      <!-- Category 5 -->
       <div class="service-card"><h3><i class="fas fa-heart"></i> Family & Individual</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Family Mediation: Divorce, Custody, Property</li><li><i class="fas fa-check-circle"></i> Will Drafting & Succession Planning</li><li><i class="fas fa-check-circle"></i> NRI Legal: POA, Property, RERA Disputes</li><li><i class="fas fa-check-circle"></i> Consumer Complaint Filing + Mediation</li></ul></div>
     </div>
   </section>
@@ -447,47 +451,56 @@
   <section class="founder-section">
     <div class="founder-container">
       <div class="founder-image"><img src="https://placehold.co/500x500/0A2540/white?text=Thillainayagam+S" alt="Thillainayagam Sankaravel"></div>
-      <div class="founder-content"><h2>Thillainayagam Sankaravel</h2><div class="founder-title">President, Med Arb International</div><p>With over 30+ years legal experience and 15 years specialized in ADR, mediation and arbitration. Recognized for international legal initiatives and civil/criminal expertise. He has fostered a legacy of resolving over 1000 disputes with finesse.</p><a href="about.html" class="read-more">Read full profile →</a></div>
+      <div class="founder-content">
+        <h2>Thillainayagam Sankaravel</h2>
+        <div class="founder-title">President, Med Arb International</div>
+        <p>With over 30+ years legal experience and 15 years specialized in ADR, mediation and arbitration. Recognized for international legal initiatives and civil/criminal expertise. He has fostered a legacy of resolving over 1000 disputes with finesse.</p>
+        <a href="about.html" class="read-more">Read full profile →</a>
+      </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
   <section class="why-choose">
     <div class="section-title" style="color: white;">Why Choose Med Arb International?</div>
-    <div class="why-grid"><div class="why-item"><i class="fas fa-balance-scale"></i><h3>Neutral & Professional</h3></div><div class="why-item"><i class="fas fa-clock"></i><h3>Faster than Court Litigation</h3></div><div class="why-item"><i class="fas fa-lock"></i><h3>Confidential Dispute Resolution</h3></div></div>
+    <div class="why-grid">
+      <div class="why-item"><i class="fas fa-balance-scale"></i><h3>Neutral & Professional</h3></div>
+      <div class="why-item"><i class="fas fa-clock"></i><h3>Faster than Court Litigation</h3></div>
+      <div class="why-item"><i class="fas fa-lock"></i><h3>Confidential Dispute Resolution</h3></div>
+    </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="final-cta"><h2>Have a dispute? Let's resolve it efficiently.</h2><a href="contact.html" class="btn-primary" style="background:#0A2540; color:white;">Schedule Consultation</a></section>
+  <section class="final-cta">
+    <h2>Have a dispute? Let's resolve it efficiently.</h2>
+    <a href="contact.html" class="btn-primary" style="background:#0A2540; color:white;">Schedule Consultation</a>
+  </section>
 </main>
 
-<!-- Include Footer Component -->
+<!-- Footer placeholder -->
 <div id="medarb-footer"></div>
 
 <script>
-  // Load footer.html dynamically
   fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
+    .then(function (r) { return r.text(); })
+    .then(function (data) {
       document.getElementById('medarb-footer').innerHTML = data;
     })
-    .catch(error => {
-      console.error('Error loading footer:', error);
-      document.getElementById('medarb-footer').innerHTML = '<div style="background:#0A2540; color:white; padding:2rem; text-align:center;">Med Arb International - Footer Error</div>';
+    .catch(function (err) {
+      console.error('Error loading footer:', err);
+      document.getElementById('medarb-footer').innerHTML =
+        '<div style="background:#0A2540;color:white;padding:2rem;text-align:center;">Med Arb International</div>';
     });
 </script>
 
-<!-- Index Page Independent JavaScript -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('Med Arb International Homepage Loaded');
-    
-    // Smooth scroll for anchor links (if any)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
+  document.addEventListener('DOMContentLoaded', function () {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
         if (href !== '#' && href !== '#contact') {
-          const target = document.querySelector(href);
+          var target = document.querySelector(href);
           if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
