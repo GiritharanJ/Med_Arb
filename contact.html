@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contact Med Arb International | Book Consultation | Chennai Office</title>
-  <meta name="description" content="Schedule a confidential consultation with Med Arb International. Visit our office at Ambal Towers, Arumbakkam, Chennai. Call, WhatsApp or email us for mediation and arbitration services worldwide.">
-  <meta name="keywords" content="contact Med Arb International, Chennai legal office, dispute resolution consultation, mediation services Chennai, arbitration lawyers Chennai">
+  <title>Contact Us | Med Arb International - Chennai Office | Book Consultation</title>
+  <meta name="description" content="Schedule a confidential consultation with Med Arb International. Visit our office at Ambal Towers, Arumbakkam, Chennai. Call, WhatsApp or email for mediation and arbitration services.">
+  <meta name="keywords" content="contact Med Arb International, Chennai legal office, dispute resolution consultation, mediation services Chennai, arbitration lawyers, ADR services">
   <meta name="author" content="Med Arb International">
   
   <style>
@@ -20,23 +20,20 @@
       background-color: #F8F9FB;
     }
     
-    .container {
+    /* Main Container */
+    .contact-wrapper {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 3rem 1.5rem;
     }
     
-    .gold-accent { color: #C9A227; }
-    .bg-gold { background-color: #C9A227; }
-    .bg-navy { background-color: #0A2540; }
-    .text-navy { color: #0A2540; }
-    
-    /* Contact Page Specific Styles */
+    /* Hero Section */
     .contact-hero {
       background: linear-gradient(135deg, #0A2540 0%, #1a3a5c 100%);
       color: white;
       padding: 3rem 1.5rem;
       text-align: center;
+      margin-bottom: 0;
     }
     
     .contact-hero h1 {
@@ -50,9 +47,10 @@
       color: #cbd5e1;
       max-width: 600px;
       margin: 0 auto;
+      line-height: 1.6;
     }
     
-    .contact-hero .badge {
+    .hero-badge {
       display: inline-block;
       background: #C9A227;
       color: #0A2540;
@@ -63,38 +61,50 @@
       margin-bottom: 1rem;
     }
     
+    /* Section Divider */
     .section-divider {
       width: 60px;
       height: 4px;
       background: #C9A227;
-      margin: 0.5rem auto 2rem;
+      margin: 0 auto 2rem auto;
       border-radius: 2px;
     }
     
-    /* Contact Info Card */
-    .contact-info-card {
+    /* Two Column Layout */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    
+    /* Contact Info Cards */
+    .info-card {
       background: white;
       border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      height: 100%;
+      padding: 1.8rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
     }
     
-    .contact-info-card h3 {
-      font-size: 1.3rem;
+    .info-card h3 {
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0A2540;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      border-bottom: 2px solid #C9A227;
+      padding-bottom: 0.6rem;
     }
     
-    .contact-info-card h3 i {
+    .info-card h3 i {
       color: #C9A227;
+      font-size: 1.2rem;
     }
     
-    .contact-detail {
+    /* Contact Details */
+    .contact-item {
       display: flex;
       align-items: flex-start;
       gap: 1rem;
@@ -103,51 +113,59 @@
       border-bottom: 1px solid #eef2f6;
     }
     
-    .contact-detail:last-child {
+    .contact-item:last-child {
       border-bottom: none;
       padding-bottom: 0;
+      margin-bottom: 0;
     }
     
-    .contact-detail i {
-      font-size: 1.2rem;
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: #f1f5f9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .contact-icon i {
+      font-size: 1.1rem;
       color: #C9A227;
-      margin-top: 0.2rem;
     }
     
-    .contact-detail .detail-content {
-      flex: 1;
-    }
-    
-    .contact-detail .detail-content strong {
+    .contact-text strong {
       display: block;
       color: #0A2540;
-      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
     }
     
-    .contact-detail .detail-content p {
+    .contact-text p {
       color: #64748b;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       line-height: 1.5;
     }
     
-    /* Social Media Icons */
+    /* Social Icons */
     .social-icons {
       display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 0.8rem;
       flex-wrap: wrap;
+      margin-top: 0.5rem;
     }
     
     .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       background: #0A2540;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       transition: all 0.2s ease;
       text-decoration: none;
     }
@@ -158,20 +176,58 @@
       transform: translateY(-3px);
     }
     
-    /* Form Styles */
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .action-btn {
+      padding: 0.9rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    
+    .action-btn-call { background: #0A2540; color: white; }
+    .action-btn-call:hover { background: #C9A227; color: #0A2540; transform: translateY(-2px); }
+    .action-btn-whatsapp { background: #25D366; color: white; }
+    .action-btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+    .action-btn-meet { background: linear-gradient(135deg, #0F9D58, #0B7E3A); color: white; }
+    .action-btn-meet:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(11,126,58,0.3); }
+    
+    /* Form Card */
     .form-card {
       background: white;
       border-radius: 1rem;
       padding: 1.8rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     }
     
     .form-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0A2540;
-      margin-bottom: 1.5rem;
       text-align: center;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .form-card h3 i {
+      color: #C9A227;
     }
     
     .form-group {
@@ -182,12 +238,13 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 0.8rem;
+      padding: 0.85rem;
       border: 1px solid #e2e8f0;
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       font-size: 0.9rem;
       transition: all 0.2s;
       font-family: inherit;
+      background: #f8fafc;
     }
     
     .form-group input:focus,
@@ -195,16 +252,23 @@
     .form-group textarea:focus {
       outline: none;
       border-color: #C9A227;
-      box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
     }
     
-    .btn-submit {
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    
+    .submit-btn {
       width: 100%;
       background: #0A2540;
       color: white;
       padding: 0.9rem;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -215,73 +279,139 @@
       gap: 0.5rem;
     }
     
-    .btn-submit:hover {
+    .submit-btn:hover {
       background: #C9A227;
       color: #0A2540;
       transform: translateY(-2px);
     }
     
-    .btn-whatsapp {
+    .whatsapp-submit {
       background: #25D366;
+    }
+    
+    .whatsapp-submit:hover {
+      background: #128C7E;
       color: white;
     }
     
-    .btn-whatsapp:hover {
-      background: #128C7E;
-    }
-    
-    .btn-google-meet {
-      background: linear-gradient(135deg, #0F9D58 0%, #0B7E3A 100%);
+    .meet-submit {
+      background: linear-gradient(135deg, #0F9D58, #0B7E3A);
     }
     
     .form-status {
       margin-top: 1rem;
       text-align: center;
-      font-size: 0.9rem;
-    }
-    
-    /* Action Buttons Row */
-    .action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      margin-top: 1.5rem;
-    }
-    
-    .action-btn {
-      padding: 0.8rem;
+      font-size: 0.85rem;
+      padding: 0.5rem;
       border-radius: 0.5rem;
-      font-weight: 600;
+    }
+    
+    .confidential-note {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 0.6rem;
       text-align: center;
-      text-decoration: none;
-      display: flex;
+      margin-top: 1rem;
+    }
+    
+    .confidential-note i {
+      color: #C9A227;
+      margin-right: 0.5rem;
+    }
+    
+    .confidential-note p {
+      font-size: 0.8rem;
+      color: #475569;
+    }
+    
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      transition: all 0.2s;
-      cursor: pointer;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 1rem;
+      max-width: 450px;
+      width: 90%;
+      padding: 1.8rem;
+      position: relative;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #C9A227;
+    }
+    
+    .modal-header h3 {
+      font-size: 1.2rem;
+      color: #0A2540;
+    }
+    
+    .close-modal {
+      background: none;
       border: none;
-      font-size: 0.95rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #64748b;
     }
     
-    .action-btn i {
-      font-size: 1rem;
+    .modal-body input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
     }
     
-    .modal {
-      transition: all 0.3s ease;
+    .confirm-meet-btn {
+      width: 100%;
+      background: #0F9D58;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.5rem;
     }
     
     /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 1rem;
+    @media (max-width: 900px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .contact-wrapper {
+        padding: 2rem 1rem;
       }
       .contact-hero h1 {
         font-size: 1.6rem;
       }
-      .action-buttons {
-        flex-direction: column;
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .info-card {
+        padding: 1.2rem;
+      }
+      .form-card {
+        padding: 1.2rem;
       }
     }
   </style>
@@ -292,110 +422,113 @@
 
 <!-- Header Include -->
 <div id="medarb-header"></div>
-
 <script src="load-header.js"></script>
+
 <main>
   <!-- Hero Section -->
   <section class="contact-hero">
-    <div class="badge"><i class="fas fa-handshake"></i> Confidential & Professional</div>
+    <div class="hero-badge"><i class="fas fa-handshake"></i> Confidential & Professional</div>
     <h1>Get in Touch</h1>
     <p>Schedule a consultation with our expert legal team. We're here to help resolve your disputes efficiently.</p>
   </section>
 
-  <div class="container" style="padding: 3rem 1.5rem;">
+  <div class="contact-wrapper">
     <div class="section-divider"></div>
     
-    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-      
-      <!-- Left Column: Contact Information -->
+    <div class="two-columns">
+      <!-- LEFT COLUMN - Contact Information -->
       <div>
-        <div class="contact-info-card">
-          <h3><i class="fas fa-map-marker-alt"></i> Visit Our Office</h3>
-          <div class="contact-detail">
-            <i class="fas fa-building"></i>
-            <div class="detail-content">
+        <!-- Address Card -->
+        <div class="info-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Our Office</h3>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-building"></i></div>
+            <div class="contact-text">
               <strong>Office Address</strong>
               <p>Ambal Towers<br>#1 Second Main Road, Jagannathan Nagar<br>Arumbakkam, Chennai - 600106<br>Tamilnadu, India</p>
             </div>
           </div>
-          
-          <div class="contact-detail">
-            <i class="fas fa-phone-alt"></i>
-            <div class="detail-content">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-text">
               <strong>Phone</strong>
               <p>+91 98410 98484</p>
             </div>
           </div>
-          
-          <div class="contact-detail">
-            <i class="fas fa-envelope"></i>
-            <div class="detail-content">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
               <strong>Email</strong>
               <p>contact@medarbinternational.com</p>
             </div>
           </div>
-          
-          <div class="contact-detail">
-            <i class="fas fa-clock"></i>
-            <div class="detail-content">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-text">
               <strong>Business Hours</strong>
               <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
             </div>
           </div>
         </div>
         
-        <!-- Social Media Section -->
-        <div class="contact-info-card" style="margin-top: 1.5rem;">
+        <!-- Social Media Card -->
+        <div class="info-card">
           <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/company/medarb-international" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_ID" target="_blank" class="social-icon" aria-label="Google Business"><i class="fab fa-google"></i></a>
-            <a href="https://www.instagram.com/medarbinternational" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/medarbinternational" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/medarbintl" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/medarb-international" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_ID" target="_blank" class="social-icon"><i class="fab fa-google"></i></a>
+            <a href="https://www.instagram.com/medarbinternational" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/medarbinternational" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/medarbintl" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
           </div>
-          <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 1rem; text-align: center;">Follow us for legal updates and insights</p>
+          <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 1rem;">Follow us for legal updates and insights</p>
         </div>
         
-        <!-- Quick Action Buttons -->
-        <div class="action-buttons" style="margin-top: 1.5rem;">
-          <a href="tel:+919841098484" class="action-btn" style="background: #0A2540; color: white;"><i class="fas fa-phone"></i> Call Now</a>
-          <button id="whatsappPrefillBtn" class="action-btn" style="background: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> WhatsApp (Prefilled Data)</button>
-          <button id="googleMeetBtn" class="action-btn btn-google-meet" style="color: white; border: none;"><i class="fab fa-google"></i> Schedule Google Meet</button>
+        <!-- Quick Actions Card -->
+        <div class="info-card">
+          <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+          <div class="action-buttons">
+            <a href="tel:+919841098484" class="action-btn action-btn-call"><i class="fas fa-phone"></i> Call Now</a>
+            <button id="whatsappPrefillBtn" class="action-btn action-btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp (Prefilled Data)</button>
+            <button id="googleMeetBtn" class="action-btn action-btn-meet"><i class="fab fa-google"></i> Schedule Google Meet</button>
+          </div>
         </div>
         
-        <div class="contact-info-card" style="margin-top: 1.5rem; background: #f1f5f9;">
-          <div style="text-align: center;">
-            <i class="fas fa-lock gold-accent" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: inline-block;"></i>
-            <p style="font-size: 0.85rem; color: #475569;">All inquiries are confidential and protected under attorney-client privilege.</p>
-          </div>
+        <!-- Confidentiality Note -->
+        <div class="confidential-note">
+          <i class="fas fa-lock"></i>
+          <p>All inquiries are confidential and protected under attorney-client privilege.</p>
         </div>
       </div>
       
-      <!-- Right Column: Contact Form -->
+      <!-- RIGHT COLUMN - Contact Form -->
       <div>
         <div class="form-card">
-          <h3><i class="fas fa-calendar-check gold-accent"></i> Book a Consultation</h3>
-          <form id="contactForm" action="#" method="POST">
-            <div class="form-group"><input type="text" id="fullName" name="name" placeholder="Full Name" required></div>
-            <div class="form-group"><input type="email" id="emailId" name="email" placeholder="Email Address" required></div>
-            <div class="form-group"><input type="tel" id="phoneNumber" name="phone" placeholder="Phone Number" required></div>
-            <div class="form-group">
-              <select id="disputeType" name="dispute_type">
-                <option>Commercial Dispute</option><option>Employment Conflict</option><option>Intellectual Property</option>
-                <option>Construction Dispute</option><option>Real Estate Dispute</option><option>Family Dispute</option>
-                <option>Criminal Matter</option><option>Tax Dispute</option><option>Other</option>
-              </select>
+          <h3><i class="fas fa-calendar-check"></i> Book a Consultation</h3>
+          
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group"><input type="text" id="fullName" placeholder="Full Name" required></div>
+              <div class="form-group"><input type="email" id="emailId" placeholder="Email Address" required></div>
             </div>
-            <div class="form-group"><textarea id="messageText" name="message" rows="4" placeholder="Brief description of your dispute..." required></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><input type="tel" id="phoneNumber" placeholder="Phone Number" required></div>
+              <div class="form-group">
+                <select id="disputeType">
+                  <option>Commercial Dispute</option><option>Employment Conflict</option><option>Intellectual Property</option>
+                  <option>Construction Dispute</option><option>Real Estate Dispute</option><option>Family Dispute</option>
+                  <option>Criminal Matter</option><option>Tax Dispute</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group"><textarea id="messageText" rows="4" placeholder="Brief description of your dispute..."></textarea></div>
             
-            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-              <button type="submit" id="bookConsultBtn" class="btn-submit"><i class="fas fa-calendar-check"></i> Book Consultation</button>
-              <button type="button" id="whatsappFormBtn" class="btn-submit btn-whatsapp"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
-              <button type="button" id="googleMeetFormBtn" class="btn-submit btn-google-meet"><i class="fab fa-google"></i> Schedule Google Meet</button>
-            </div>
-            <p class="form-status" style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8; text-align: center;">We will respond within 24 hours. Confidentiality guaranteed.</p>
-            <div id="formStatus" class="form-status" style="color: #0A2540;"></div>
+            <button type="submit" id="bookConsultBtn" class="submit-btn"><i class="fas fa-calendar-check"></i> Book Consultation</button>
+            <button type="button" id="whatsappFormBtn" class="submit-btn whatsapp-submit" style="margin-top: 0.8rem;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+            <button type="button" id="googleMeetFormBtn" class="submit-btn meet-submit" style="margin-top: 0.8rem;"><i class="fab fa-google"></i> Schedule Google Meet</button>
+            
+            <p style="font-size: 0.7rem; color: #94a3b8; text-align: center; margin-top: 1rem;">We will respond within 24 hours. Confidentiality guaranteed.</p>
+            <div id="formStatus" class="form-status"></div>
           </form>
         </div>
       </div>
@@ -404,33 +537,30 @@
 </main>
 
 <!-- Google Meet Modal -->
-<div id="meetModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" style="display: none;">
-  <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
-    <div class="flex justify-between items-center mb-4"><h3 class="text-2xl font-bold text-navy">Schedule Google Meet</h3><button id="closeModalBtn" class="text-gray-500 text-2xl">&times;</button></div>
-    <p class="text-gray-600 mb-3">Fill details to receive Google Meet invitation:</p>
-    <input type="text" id="modalName" placeholder="Full Name" class="w-full p-2 border rounded-lg mb-2">
-    <input type="email" id="modalEmail" placeholder="Email Address" class="w-full p-2 border rounded-lg mb-2">
-    <input type="tel" id="modalPhone" placeholder="Phone" class="w-full p-2 border rounded-lg mb-2">
-    <input type="datetime-local" id="meetDateTime" class="w-full p-2 border rounded-lg mb-4">
-    <button id="confirmMeetBtn" class="bg-[#0F9D58] text-white w-full py-2 rounded-lg font-bold hover:bg-[#0B7E3A] transition">Generate Google Meet & Send</button>
-    <p class="text-xs text-gray-400 mt-2">We'll email you a Google Meet link + calendar invite.</p>
+<div id="meetModal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fab fa-google" style="color: #C9A227;"></i> Schedule Google Meet</h3>
+      <button class="close-modal" id="closeModalBtn">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-bottom: 1rem; color: #64748b;">Fill details to receive Google Meet invitation:</p>
+      <input type="text" id="modalName" placeholder="Full Name">
+      <input type="email" id="modalEmail" placeholder="Email Address">
+      <input type="tel" id="modalPhone" placeholder="Phone Number">
+      <input type="datetime-local" id="meetDateTime">
+      <button id="confirmMeetBtn" class="confirm-meet-btn"><i class="fab fa-google"></i> Generate Google Meet & Send</button>
+      <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 0.8rem;">We'll email you a Google Meet link + calendar invite.</p>
+    </div>
   </div>
 </div>
 
 <!-- Footer Include -->
 <div id="medarb-footer"></div>
+<script src="load-footer.js"></script>
 
 <script>
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('medarb-footer').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error));
-</script>
-
-<script>
-// Helper: get current form data
+// Helper Functions
 function getFormData() {
   return {
     name: document.getElementById('fullName')?.value.trim() || '',
@@ -441,89 +571,86 @@ function getFormData() {
   };
 }
 
-// Book Consultation Form Submit
+function sendWhatsAppMessage(data, source) {
+  const msg = `Hello Med Arb International,%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Dispute Type:* ${encodeURIComponent(data.dispute)}%0A*Message:* ${encodeURIComponent(data.message)}%0A%0ASource: ${source}`;
+  window.open(`https://wa.me/919841098484?text=${msg}`, '_blank');
+}
+
+// Book Consultation Form
 document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const fd = getFormData();
   if (!fd.name || !fd.email || !fd.phone) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please fill all required fields.</span>';
+    document.getElementById('formStatus').innerHTML = '<span style="color:#dc2626;">Please fill all required fields.</span>';
     return;
   }
   const statusDiv = document.getElementById('formStatus');
-  statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending consultation request...';
+  statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   
   try {
     const formPayload = new FormData();
-    formPayload.append('name', fd.name); formPayload.append('email', fd.email);
-    formPayload.append('phone', fd.phone); formPayload.append('dispute_type', fd.dispute);
+    formPayload.append('name', fd.name);
+    formPayload.append('email', fd.email);
+    formPayload.append('phone', fd.phone);
+    formPayload.append('dispute_type', fd.dispute);
     formPayload.append('message', fd.message);
     
     const response = await fetch('/api/contact.php', { method: 'POST', body: formPayload });
     const result = await response.json();
     if (result.success) {
-      statusDiv.innerHTML = '<span class="text-green-600">✓ Consultation booked! We will contact you shortly.</span>';
-      await sendWhatsAppLead(fd, 'consultation');
+      statusDiv.innerHTML = '<span style="color:#16a34a;">✓ Consultation booked! We will contact you shortly.</span>';
+      sendWhatsAppMessage(fd, 'consultation_form');
       document.getElementById('contactForm').reset();
     } else {
-      statusDiv.innerHTML = '<span class="text-red-600">Error. Please call us directly.</span>';
+      statusDiv.innerHTML = '<span style="color:#dc2626;">Error. Please call us directly.</span>';
     }
   } catch(err) {
-    statusDiv.innerHTML = '<span class="text-green-600">✓ Request received! Our team will contact you within 24 hours.</span>';
-    await sendWhatsAppLead(fd, 'consultation');
+    statusDiv.innerHTML = '<span style="color:#16a34a;">✓ Request received! Our team will contact you within 24 hours.</span>';
+    sendWhatsAppMessage(fd, 'consultation_form_demo');
     document.getElementById('contactForm').reset();
   }
 });
 
-// WhatsApp Functions
-document.getElementById('whatsappFormBtn')?.addEventListener('click', async () => {
+// WhatsApp Form Button
+document.getElementById('whatsappFormBtn')?.addEventListener('click', () => {
   const fd = getFormData();
   if (!fd.name || !fd.phone) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please enter Name and Phone.</span>';
+    document.getElementById('formStatus').innerHTML = '<span style="color:#dc2626;">Please enter Name and Phone.</span>';
     return;
   }
-  await sendWhatsAppLead(fd, 'whatsapp_direct');
-  document.getElementById('formStatus').innerHTML = '<span class="text-green-600">✓ WhatsApp opened with your details.</span>';
+  sendWhatsAppMessage(fd, 'whatsapp_button');
+  document.getElementById('formStatus').innerHTML = '<span style="color:#16a34a;">✓ WhatsApp opened with your details.</span>';
 });
 
-document.getElementById('whatsappPrefillBtn')?.addEventListener('click', (e) => {
-  e.preventDefault();
+// WhatsApp Prefill Button
+document.getElementById('whatsappPrefillBtn')?.addEventListener('click', () => {
   const fd = getFormData();
   if (!fd.name || !fd.phone) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Fill Name & Phone in the form first.</span>';
+    document.getElementById('formStatus').innerHTML = '<span style="color:#dc2626;">Fill Name & Phone in the form first.</span>';
     return;
   }
-  generateWhatsAppUrl(fd);
+  sendWhatsAppMessage(fd, 'prefill_button');
 });
-
-async function sendWhatsAppLead(data, source) {
-  const clientMsg = `Hello Med Arb International,%0A*Name:* ${encodeURIComponent(data.name)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Dispute Type:* ${encodeURIComponent(data.dispute)}%0A*Message:* ${encodeURIComponent(data.message)}`;
-  window.open(`https://wa.me/919841098484?text=${clientMsg}`, '_blank');
-  return true;
-}
-
-function generateWhatsAppUrl(data) {
-  const text = `Hello Med Arb International,%0A*Name:* ${encodeURIComponent(data.name)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Dispute:* ${encodeURIComponent(data.dispute)}%0A*Details:* ${encodeURIComponent(data.message)}`;
-  window.open(`https://wa.me/919841098484?text=${text}`, '_blank');
-}
 
 // Google Meet Functions
-let modal = document.getElementById('meetModal');
-let googleMeetBtn = document.getElementById('googleMeetBtn');
-let googleMeetFormBtn = document.getElementById('googleMeetFormBtn');
+const modal = document.getElementById('meetModal');
+const googleMeetBtn = document.getElementById('googleMeetBtn');
+const googleMeetFormBtn = document.getElementById('googleMeetFormBtn');
 
 function openMeetModal() {
   const fd = getFormData();
   if (!fd.name || !fd.email) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please fill Name & Email first.</span>';
-    return false;
+    document.getElementById('formStatus').innerHTML = '<span style="color:#dc2626;">Please fill Name & Email first.</span>';
+    return;
   }
   document.getElementById('modalName').value = fd.name;
   document.getElementById('modalEmail').value = fd.email;
   document.getElementById('modalPhone').value = fd.phone;
-  const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(10, 0, 0, 0);
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(10, 0, 0, 0);
   document.getElementById('meetDateTime').value = tomorrow.toISOString().slice(0, 16);
   modal.style.display = 'flex';
-  return true;
 }
 
 googleMeetBtn?.addEventListener('click', openMeetModal);
@@ -535,6 +662,7 @@ document.getElementById('confirmMeetBtn')?.addEventListener('click', async () =>
   const email = document.getElementById('modalEmail').value.trim();
   const phone = document.getElementById('modalPhone').value.trim();
   const datetime = document.getElementById('meetDateTime').value;
+  
   if (!name || !email || !datetime) { alert('Please fill all fields'); return; }
   
   const meetLink = `https://meet.google.com/new?meet=${Date.now()}`;
@@ -544,11 +672,11 @@ document.getElementById('confirmMeetBtn')?.addEventListener('click', async () =>
   document.getElementById('formStatus').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Scheduling...';
   modal.style.display = 'none';
   
-  // Demo: Generate ICS file
+  // Generate ICS file
   const icsContent = generateICSFile(name, email, datetime, meetLink);
   downloadICS(icsContent);
-  document.getElementById('formStatus').innerHTML = `<span class="text-green-600">✓ Google Meet scheduled! Calendar invite downloaded. Join: <a href="${meetLink}" target="_blank">Click here</a></span>`;
-  await sendWhatsAppLead({ name, email, phone, dispute: 'Google Meet', message: `Scheduled on ${formattedDate}` }, 'google_meet');
+  document.getElementById('formStatus').innerHTML = `<span style="color:#16a34a;">✓ Google Meet scheduled! Calendar invite downloaded. Join: <a href="${meetLink}" target="_blank">Click here</a></span>`;
+  sendWhatsAppMessage({ name, email, phone, dispute: 'Google Meet', message: `Scheduled on ${formattedDate}` }, 'google_meet');
 });
 
 function generateICSFile(attendeeName, attendeeEmail, startDateTimeStr, meetUrl) {
