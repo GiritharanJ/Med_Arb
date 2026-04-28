@@ -231,91 +231,90 @@
 
 <script>
   // ============================================
-  // HEADER JAVASCRIPT - SELF CONTAINED
-  // Does NOT affect any other page elements
+  // FIXED HEADER JAVASCRIPT - WORKS WITH DYNAMIC LOADING
   // ============================================
   (function() {
     'use strict';
     
-    // Wait for DOM to be ready
-    function initHeader() {
+    // Function to setup mobile menu
+    function setupMobileMenu() {
       // Get mobile menu elements
       const mobileBtn = document.getElementById('medarbMobileBtn');
       const mobileMenu = document.getElementById('medarbMobileMenu');
       
-      // If elements don't exist, exit silently
+      // If elements don't exist, exit
       if (!mobileBtn || !mobileMenu) {
-        console.warn('MedArb Header: Mobile menu elements not found');
-        return;
+        console.log('MedArb Header: Elements not ready yet');
+        return false;
       }
       
-      // Toggle menu function
-      function toggleMobileMenu(event) {
-        // Prevent event from affecting page
-        if (event) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        
-        // Toggle the active class
-        if (mobileMenu.classList.contains('active')) {
-          mobileMenu.classList.remove('active');
-        } else {
-          mobileMenu.classList.add('active');
-        }
-      }
+      console.log('MedArb Header: Setting up mobile menu');
       
-      // Remove any existing listeners by cloning (clean approach)
+      // Remove any existing click handlers by creating fresh elements
       const newBtn = mobileBtn.cloneNode(true);
       mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
-      const finalMobileBtn = document.getElementById('medarbMobileBtn');
-      const finalMobileMenu = document.getElementById('medarbMobileMenu');
+      const finalBtn = document.getElementById('medarbMobileBtn');
+      const finalMenu = document.getElementById('medarbMobileMenu');
       
-      // Add click event to hamburger button
-      if (finalMobileBtn) {
-        finalMobileBtn.addEventListener('click', toggleMobileMenu);
-      }
-      
-      // Close menu when clicking on any link inside mobile menu
-      if (finalMobileMenu) {
-        const mobileLinks = finalMobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(function(link) {
-          link.addEventListener('click', function() {
-            finalMobileMenu.classList.remove('active');
-          });
-        });
+      // Simple direct click handler - most reliable approach
+      finalBtn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         
-        // Prevent menu clicks from bubbling up
-        finalMobileMenu.addEventListener('click', function(e) {
-          e.stopPropagation();
-        });
-      }
+        if (finalMenu.classList.contains('active')) {
+          finalMenu.classList.remove('active');
+          console.log('Menu closed');
+        } else {
+          finalMenu.classList.add('active');
+          console.log('Menu opened');
+        }
+        return false;
+      };
       
-      // Close menu when clicking outside (optional but good UX)
-      document.addEventListener('click', function(event) {
-        if (finalMobileMenu && finalMobileMenu.classList.contains('active')) {
-          const isClickInside = finalMobileMenu.contains(event.target) || 
-                                (finalMobileBtn && finalMobileBtn.contains(event.target));
-          if (!isClickInside) {
-            finalMobileMenu.classList.remove('active');
+      // Close menu when clicking on links
+      const allLinks = finalMenu.querySelectorAll('a');
+      allLinks.forEach(function(link) {
+        link.onclick = function() {
+          finalMenu.classList.remove('active');
+        };
+      });
+      
+      // Close menu when clicking outside
+      document.body.addEventListener('click', function(e) {
+        if (finalMenu.classList.contains('active')) {
+          if (!finalMenu.contains(e.target) && !finalBtn.contains(e.target)) {
+            finalMenu.classList.remove('active');
           }
         }
       });
       
-      // Close menu on window resize (when switching to desktop)
+      // Close menu on window resize
       window.addEventListener('resize', function() {
-        if (finalMobileMenu && window.innerWidth > 900) {
-          finalMobileMenu.classList.remove('active');
+        if (window.innerWidth > 900) {
+          finalMenu.classList.remove('active');
         }
       });
+      
+      return true;
     }
     
-    // Initialize when DOM is ready
+    // Try to setup immediately
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initHeader);
+      document.addEventListener('DOMContentLoaded', function() {
+        setupMobileMenu();
+      });
     } else {
-      initHeader();
+      setupMobileMenu();
     }
+    
+    // Also try after a small delay (for dynamic loading scenarios)
+    setTimeout(function() {
+      setupMobileMenu();
+    }, 100);
+    
+    setTimeout(function() {
+      setupMobileMenu();
+    }, 500);
   })();
 </script>
 
