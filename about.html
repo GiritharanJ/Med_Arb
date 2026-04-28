@@ -250,19 +250,7 @@
 
 <!-- Header Include -->
 <div id="medarb-header"></div>
-
-<script>
-  // Load header dynamically
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('medarb-header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error loading header:', error);
-      document.getElementById('medarb-header').innerHTML = '<div style="background:#0A2540; color:white; padding:1rem; text-align:center;">Navigation Error - Please check header.html</div>';
-    });
-</script>
+<script src="load-header.js"></script>
 
 <main>
   <div class="container" style="padding: 3rem 1.5rem;">
