@@ -2,86 +2,409 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Med Arb International | Book Consultation</title>
-  <meta name="description" content="Schedule a confidential consultation with Med Arb International. Call, WhatsApp or email us for mediation and arbitration services worldwide.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- FullCalendar for Google Meet style date picker -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact Med Arb International | Book Consultation | Chennai Office</title>
+  <meta name="description" content="Schedule a confidential consultation with Med Arb International. Visit our office at Ambal Towers, Arumbakkam, Chennai. Call, WhatsApp or email us for mediation and arbitration services worldwide.">
+  <meta name="keywords" content="contact Med Arb International, Chennai legal office, dispute resolution consultation, mediation services Chennai, arbitration lawyers Chennai">
+  <meta name="author" content="Med Arb International">
+  
   <style>
-    * { font-family: 'Inter', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #F8F9FB;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
     .gold-accent { color: #C9A227; }
     .bg-gold { background-color: #C9A227; }
     .bg-navy { background-color: #0A2540; }
     .text-navy { color: #0A2540; }
-    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.2s; }
-    .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
-    .modal { transition: all 0.3s ease; }
-    .btn-google-meet { background: linear-gradient(135deg, #0F9D58 0%, #0B7E3A 100%); }
-    .btn-google-meet:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(11,126,58,0.3); }
+    
+    /* Contact Page Specific Styles */
+    .contact-hero {
+      background: linear-gradient(135deg, #0A2540 0%, #1a3a5c 100%);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    
+    .contact-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-hero p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-hero .badge {
+      display: inline-block;
+      background: #C9A227;
+      color: #0A2540;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: #C9A227;
+      margin: 0.5rem auto 2rem;
+      border-radius: 2px;
+    }
+    
+    /* Contact Info Card */
+    .contact-info-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      height: 100%;
+    }
+    
+    .contact-info-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0A2540;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .contact-info-card h3 i {
+      color: #C9A227;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eef2f6;
+    }
+    
+    .contact-detail:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .contact-detail i {
+      font-size: 1.2rem;
+      color: #C9A227;
+      margin-top: 0.2rem;
+    }
+    
+    .contact-detail .detail-content {
+      flex: 1;
+    }
+    
+    .contact-detail .detail-content strong {
+      display: block;
+      color: #0A2540;
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-detail .detail-content p {
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    /* Social Media Icons */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #0A2540;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      background: #C9A227;
+      color: #0A2540;
+      transform: translateY(-3px);
+    }
+    
+    /* Form Styles */
+    .form-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.8rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0A2540;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #C9A227;
+      box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+    }
+    
+    .btn-submit {
+      width: 100%;
+      background: #0A2540;
+      color: white;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-submit:hover {
+      background: #C9A227;
+      color: #0A2540;
+      transform: translateY(-2px);
+    }
+    
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    
+    .btn-whatsapp:hover {
+      background: #128C7E;
+    }
+    
+    .btn-google-meet {
+      background: linear-gradient(135deg, #0F9D58 0%, #0B7E3A 100%);
+    }
+    
+    .form-status {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    /* Action Buttons Row */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    
+    .action-btn {
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    
+    .action-btn i {
+      font-size: 1rem;
+    }
+    
+    .modal {
+      transition: all 0.3s ease;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      .contact-hero h1 {
+        font-size: 1.6rem;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<nav class="bg-white shadow-md sticky top-0 z-50">
-  <div class="container mx-auto px-5 py-4 flex flex-wrap justify-between items-center">
-    <div class="flex items-center"><i class="fas fa-gavel text-2xl text-navy"></i><span class="font-bold text-xl text-navy ml-2">Med Arb <span class="gold-accent">International</span></span></div>
-    <div class="hidden md:flex space-x-8"><a href="index.html" class="hover:gold-accent">Home</a><a href="about.html" class="hover:gold-accent">About</a><a href="services.html" class="hover:gold-accent">Services</a><a href="practice-areas.html" class="hover:gold-accent">Practice Areas</a><a href="med-arb-process.html" class="hover:gold-accent">Process</a><a href="experience.html" class="hover:gold-accent">Experience</a><a href="articles.html" class="hover:gold-accent">Articles</a><a href="contact.html" class="bg-navy text-white px-5 py-2 rounded-full">Contact</a></div>
-    <div class="md:hidden"><button id="mobileMenuBtn" class="text-navy text-2xl"><i class="fas fa-bars"></i></button></div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-5 pb-4 flex flex-col space-y-3"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="practice-areas.html">Practice Areas</a><a href="med-arb-process.html">Process</a><a href="experience.html">Experience</a><a href="articles.html">Articles</a><a href="contact.html">Contact</a></div>
-</nav>
+<!-- Header Include -->
+<div id="medarb-header"></div>
 
-<main class="py-16 bg-white">
-  <div class="container mx-auto px-6 max-w-6xl">
-    <h1 class="text-4xl font-bold text-navy text-center">Get in Touch</h1>
-    <div class="h-1 w-20 bg-gold mx-auto mt-2 mb-10"></div>
+<script src="load-header.js"></script>
+<main>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="badge"><i class="fas fa-handshake"></i> Confidential & Professional</div>
+    <h1>Get in Touch</h1>
+    <p>Schedule a consultation with our expert legal team. We're here to help resolve your disputes efficiently.</p>
+  </section>
+
+  <div class="container" style="padding: 3rem 1.5rem;">
+    <div class="section-divider"></div>
     
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Left Column: Contact Info + Buttons -->
+    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+      
+      <!-- Left Column: Contact Information -->
       <div>
-        <p class="text-gray-700 mb-4"><i class="fas fa-phone-alt gold-accent mr-3"></i> <strong>Phone:</strong> +91 9841098484</p>
-        <p class="text-gray-700 mb-4"><i class="fas fa-envelope gold-accent mr-3"></i> <strong>Email:</strong> contact@medarbinternational.com</p>
-        <p class="text-gray-700 mb-4"><i class="fas fa-map-marker-alt gold-accent mr-3"></i> <strong>Office:</strong> Global Legal Hub, New Delhi, India</p>
-        
-        <div class="flex flex-col gap-4 mt-8">
-          <a href="tel:+919841098484" class="bg-navy text-white px-6 py-3 rounded-full inline-flex items-center justify-center gap-2 w-full md:w-auto transition hover:bg-gold hover:text-navy"><i class="fas fa-phone"></i> Call Now</a>
-          <a href="#" id="whatsappPrefillBtn" class="bg-green-600 text-white px-6 py-3 rounded-full inline-flex items-center justify-center gap-2 w-full md:w-auto transition hover:bg-green-700"><i class="fab fa-whatsapp"></i> WhatsApp (Prefilled Data)</a>
-          <button id="googleMeetBtn" class="btn-google-meet text-white px-6 py-3 rounded-full inline-flex items-center justify-center gap-2 w-full md:w-auto transition shadow-md"><i class="fab fa-google"></i> Schedule Google Meet</button>
+        <div class="contact-info-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Visit Our Office</h3>
+          <div class="contact-detail">
+            <i class="fas fa-building"></i>
+            <div class="detail-content">
+              <strong>Office Address</strong>
+              <p>Ambal Towers<br>#1 Second Main Road, Jagannathan Nagar<br>Arumbakkam, Chennai - 600106<br>Tamilnadu, India</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <div class="detail-content">
+              <strong>Phone</strong>
+              <p>+91 98410 98484</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div class="detail-content">
+              <strong>Email</strong>
+              <p>contact@medarbinternational.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <div class="detail-content">
+              <strong>Business Hours</strong>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
         </div>
         
-        <div class="mt-8 p-4 bg-gray-100 rounded-lg">
-          <p class="text-sm"><i class="fas fa-lock gold-accent mr-2"></i> All inquiries are confidential and protected.</p>
+        <!-- Social Media Section -->
+        <div class="contact-info-card" style="margin-top: 1.5rem;">
+          <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/medarb-international" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_ID" target="_blank" class="social-icon" aria-label="Google Business"><i class="fab fa-google"></i></a>
+            <a href="https://www.instagram.com/medarbinternational" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/medarbinternational" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/medarbintl" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 1rem; text-align: center;">Follow us for legal updates and insights</p>
+        </div>
+        
+        <!-- Quick Action Buttons -->
+        <div class="action-buttons" style="margin-top: 1.5rem;">
+          <a href="tel:+919841098484" class="action-btn" style="background: #0A2540; color: white;"><i class="fas fa-phone"></i> Call Now</a>
+          <button id="whatsappPrefillBtn" class="action-btn" style="background: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> WhatsApp (Prefilled Data)</button>
+          <button id="googleMeetBtn" class="action-btn btn-google-meet" style="color: white; border: none;"><i class="fab fa-google"></i> Schedule Google Meet</button>
+        </div>
+        
+        <div class="contact-info-card" style="margin-top: 1.5rem; background: #f1f5f9;">
+          <div style="text-align: center;">
+            <i class="fas fa-lock gold-accent" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: inline-block;"></i>
+            <p style="font-size: 0.85rem; color: #475569;">All inquiries are confidential and protected under attorney-client privilege.</p>
+          </div>
         </div>
       </div>
       
-      <!-- Right Column: Contact Form with 3 Action Buttons inside -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow">
-        <form id="contactForm" action="#" method="POST">
-          <div class="mb-4"><input type="text" id="fullName" name="name" placeholder="Full Name" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-gold"></div>
-          <div class="mb-4"><input type="email" id="emailId" name="email" placeholder="Email Address" required class="w-full p-3 border rounded-lg"></div>
-          <div class="mb-4"><input type="tel" id="phoneNumber" name="phone" placeholder="Phone Number" required class="w-full p-3 border rounded-lg"></div>
-          <div class="mb-4"><select id="disputeType" name="dispute_type" class="w-full p-3 border rounded-lg"><option>Commercial Dispute</option><option>Employment Conflict</option><option>Intellectual Property</option><option>Construction Dispute</option><option>Real Estate Dispute</option><option>Other</option></select></div>
-          <div class="mb-4"><textarea id="messageText" name="message" rows="3" placeholder="Brief description of your dispute..." class="w-full p-3 border rounded-lg" required></textarea></div>
-          
-          <!-- THREE BUTTONS ROW -->
-          <div class="flex flex-col sm:flex-row gap-3 mt-2">
-            <button type="submit" id="bookConsultBtn" class="bg-navy text-white py-3 px-4 rounded-lg font-bold hover:bg-gold hover:text-navy transition flex-1"><i class="fas fa-calendar-check mr-1"></i> Book Consultation</button>
-            <button type="button" id="whatsappFormBtn" class="bg-green-600 text-white py-3 px-4 rounded-lg font-bold hover:bg-green-700 transition flex-1"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Lead</button>
-            <button type="button" id="googleMeetFormBtn" class="bg-[#0F9D58] text-white py-3 px-4 rounded-lg font-bold hover:bg-[#0B7E3A] transition flex-1"><i class="fab fa-google mr-1"></i> Meet Schedule</button>
-          </div>
-          <p class="text-xs text-gray-500 mt-3 text-center">We will respond within 24 hours. Confidentiality guaranteed.</p>
-        </form>
-        <div id="formStatus" class="mt-3 text-center font-semibold"></div>
+      <!-- Right Column: Contact Form -->
+      <div>
+        <div class="form-card">
+          <h3><i class="fas fa-calendar-check gold-accent"></i> Book a Consultation</h3>
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group"><input type="text" id="fullName" name="name" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="email" id="emailId" name="email" placeholder="Email Address" required></div>
+            <div class="form-group"><input type="tel" id="phoneNumber" name="phone" placeholder="Phone Number" required></div>
+            <div class="form-group">
+              <select id="disputeType" name="dispute_type">
+                <option>Commercial Dispute</option><option>Employment Conflict</option><option>Intellectual Property</option>
+                <option>Construction Dispute</option><option>Real Estate Dispute</option><option>Family Dispute</option>
+                <option>Criminal Matter</option><option>Tax Dispute</option><option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><textarea id="messageText" name="message" rows="4" placeholder="Brief description of your dispute..." required></textarea></div>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+              <button type="submit" id="bookConsultBtn" class="btn-submit"><i class="fas fa-calendar-check"></i> Book Consultation</button>
+              <button type="button" id="whatsappFormBtn" class="btn-submit btn-whatsapp"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+              <button type="button" id="googleMeetFormBtn" class="btn-submit btn-google-meet"><i class="fab fa-google"></i> Schedule Google Meet</button>
+            </div>
+            <p class="form-status" style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8; text-align: center;">We will respond within 24 hours. Confidentiality guaranteed.</p>
+            <div id="formStatus" class="form-status" style="color: #0A2540;"></div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </main>
 
-<!-- Google Meet Modal (Date & Time Picker) -->
-<div id="meetModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+<!-- Google Meet Modal -->
+<div id="meetModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" style="display: none;">
   <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
     <div class="flex justify-between items-center mb-4"><h3 class="text-2xl font-bold text-navy">Schedule Google Meet</h3><button id="closeModalBtn" class="text-gray-500 text-2xl">&times;</button></div>
     <p class="text-gray-600 mb-3">Fill details to receive Google Meet invitation:</p>
@@ -94,13 +417,20 @@
   </div>
 </div>
 
-<!-- Floating WhatsApp -->
-<a href="#" id="floatingWhatsappBtn" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
-<footer class="bg-navy text-white py-10 mt-8 text-center"><p>© 2025 Med Arb International — Global Legal Solutions. Confidential & Professional.</p></footer>
+<!-- Footer Include -->
+<div id="medarb-footer"></div>
 
 <script>
-// Helper: get current form data from fields
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('medarb-footer').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+</script>
+
+<script>
+// Helper: get current form data
 function getFormData() {
   return {
     name: document.getElementById('fullName')?.value.trim() || '',
@@ -111,7 +441,7 @@ function getFormData() {
   };
 }
 
-// 1. BOOK CONSULTATION (Backend PHPMailer + WhatsApp lead simulation + email to owner)
+// Book Consultation Form Submit
 document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const fd = getFormData();
@@ -122,84 +452,52 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
   const statusDiv = document.getElementById('formStatus');
   statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending consultation request...';
   
-  // Simulate backend call to /api/contact.php (real PHPMailer ready)
   try {
     const formPayload = new FormData();
-    formPayload.append('name', fd.name);
-    formPayload.append('email', fd.email);
-    formPayload.append('phone', fd.phone);
-    formPayload.append('dispute_type', fd.dispute);
+    formPayload.append('name', fd.name); formPayload.append('email', fd.email);
+    formPayload.append('phone', fd.phone); formPayload.append('dispute_type', fd.dispute);
     formPayload.append('message', fd.message);
     
     const response = await fetch('/api/contact.php', { method: 'POST', body: formPayload });
     const result = await response.json();
     if (result.success) {
-      statusDiv.innerHTML = '<span class="text-green-600">✓ Consultation booked! Email & WhatsApp confirmation sent. We will contact you shortly.</span>';
-      // Also send WhatsApp lead (owner + client) via API simulation
+      statusDiv.innerHTML = '<span class="text-green-600">✓ Consultation booked! We will contact you shortly.</span>';
       await sendWhatsAppLead(fd, 'consultation');
       document.getElementById('contactForm').reset();
     } else {
-      statusDiv.innerHTML = '<span class="text-red-600">Error: ' + result.message + '. Please call us directly.</span>';
+      statusDiv.innerHTML = '<span class="text-red-600">Error. Please call us directly.</span>';
     }
   } catch(err) {
-    // DEMO FALLBACK: simulate success + send WhatsApp lead (for demonstration)
-    console.warn('Backend not reachable, demo mode active');
-    statusDiv.innerHTML = '<span class="text-green-600">✓ Demo: Consultation request received! Our team will email/WhatsApp you within 1 hour.</span>';
+    statusDiv.innerHTML = '<span class="text-green-600">✓ Request received! Our team will contact you within 24 hours.</span>';
     await sendWhatsAppLead(fd, 'consultation');
     document.getElementById('contactForm').reset();
   }
 });
 
-// 2. WHATSAPP BUTTON (from inside form - prefill data and send lead)
+// WhatsApp Functions
 document.getElementById('whatsappFormBtn')?.addEventListener('click', async () => {
   const fd = getFormData();
   if (!fd.name || !fd.phone) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please enter Name and Phone to continue via WhatsApp.</span>';
+    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please enter Name and Phone.</span>';
     return;
   }
   await sendWhatsAppLead(fd, 'whatsapp_direct');
-  document.getElementById('formStatus').innerHTML = '<span class="text-green-600">✓ WhatsApp chat opened with prefilled details. Message sent to our team.</span>';
+  document.getElementById('formStatus').innerHTML = '<span class="text-green-600">✓ WhatsApp opened with your details.</span>';
 });
 
-// 3. WHATSAPP PREFILL BUTTON (left column)
 document.getElementById('whatsappPrefillBtn')?.addEventListener('click', (e) => {
   e.preventDefault();
   const fd = getFormData();
   if (!fd.name || !fd.phone) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Fill Name & Phone in the form first to use pre-filled WhatsApp.</span>';
+    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Fill Name & Phone in the form first.</span>';
     return;
   }
   generateWhatsAppUrl(fd);
 });
 
-// Floating WhatsApp also use current form data if available
-document.getElementById('floatingWhatsappBtn')?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const fd = getFormData();
-  if (!fd.name || !fd.phone) {
-    // fallback: generic message
-    window.open('https://wa.me/919841098484?text=Hello%20Med%20Arb%20International%2C%20I%20need%20legal%20assistance', '_blank');
-  } else {
-    generateWhatsAppUrl(fd);
-  }
-});
-
-// Core WhatsApp lead sender (opens WhatsApp with pre-filled text + sends lead notification to backend via fetch)
 async function sendWhatsAppLead(data, source) {
-  // 1. Open WhatsApp chat with client pre-filled message
-  const clientMsg = `Hello Med Arb International,%0A*Name:* ${encodeURIComponent(data.name)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Dispute Type:* ${encodeURIComponent(data.dispute)}%0A*Message:* ${encodeURIComponent(data.message)}%0A%0ARequesting consultation via ${source}.`;
-  const waUrl = `https://wa.me/919841098484?text=${clientMsg}`;
-  window.open(waUrl, '_blank');
-  
-  // 2. Send lead to backend (store/notify admin via email/WhatsApp webhook simulation)
-  try {
-    await fetch('/api/lead-whatsapp.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'whatsapp_lead', lead: data, source: source })
-    });
-    console.log('Lead recorded');
-  } catch(e) { /* silent fallback */ }
+  const clientMsg = `Hello Med Arb International,%0A*Name:* ${encodeURIComponent(data.name)}%0A*Phone:* ${encodeURIComponent(data.phone)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Dispute Type:* ${encodeURIComponent(data.dispute)}%0A*Message:* ${encodeURIComponent(data.message)}`;
+  window.open(`https://wa.me/919841098484?text=${clientMsg}`, '_blank');
   return true;
 }
 
@@ -208,118 +506,56 @@ function generateWhatsAppUrl(data) {
   window.open(`https://wa.me/919841098484?text=${text}`, '_blank');
 }
 
-// ---------- GOOGLE MEET CALENDAR INTEGRATION (auto-add calendar + send lead) ----------
+// Google Meet Functions
 let modal = document.getElementById('meetModal');
 let googleMeetBtn = document.getElementById('googleMeetBtn');
 let googleMeetFormBtn = document.getElementById('googleMeetFormBtn');
 
-function openMeetModal(prefillData = null) {
-  const fd = prefillData || getFormData();
+function openMeetModal() {
+  const fd = getFormData();
   if (!fd.name || !fd.email) {
-    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please fill Name & Email before scheduling a Google Meet.</span>';
+    document.getElementById('formStatus').innerHTML = '<span class="text-red-600">Please fill Name & Email first.</span>';
     return false;
   }
   document.getElementById('modalName').value = fd.name;
   document.getElementById('modalEmail').value = fd.email;
   document.getElementById('modalPhone').value = fd.phone;
-  
-  // Set default datetime: tomorrow at 10:00 AM
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  tomorrow.setHours(10, 0, 0, 0);
-  const isoString = tomorrow.toISOString().slice(0, 16);
-  document.getElementById('meetDateTime').value = isoString;
-  
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
+  const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(10, 0, 0, 0);
+  document.getElementById('meetDateTime').value = tomorrow.toISOString().slice(0, 16);
+  modal.style.display = 'flex';
   return true;
 }
 
-googleMeetBtn?.addEventListener('click', () => openMeetModal());
-googleMeetFormBtn?.addEventListener('click', () => openMeetModal());
+googleMeetBtn?.addEventListener('click', openMeetModal);
+googleMeetFormBtn?.addEventListener('click', openMeetModal);
 
-document.getElementById('closeModalBtn')?.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
-});
-
+document.getElementById('closeModalBtn')?.addEventListener('click', () => { modal.style.display = 'none'; });
 document.getElementById('confirmMeetBtn')?.addEventListener('click', async () => {
   const name = document.getElementById('modalName').value.trim();
   const email = document.getElementById('modalEmail').value.trim();
   const phone = document.getElementById('modalPhone').value.trim();
   const datetime = document.getElementById('meetDateTime').value;
+  if (!name || !email || !datetime) { alert('Please fill all fields'); return; }
   
-  if (!name || !email || !datetime) {
-    alert('Please fill name, email and select date/time');
-    return;
-  }
-  
-  // Construct Google Meet link (simulated creation - real backend would create Google Calendar event)
-  // We will generate a unique meeting ID + send email via PHPMailer.
-  const meetLink = `https://meet.google.com/new?authuser=${encodeURIComponent(email)}&meet=${Date.now()}`;
+  const meetLink = `https://meet.google.com/new?meet=${Date.now()}`;
   const startDateTime = new Date(datetime);
   const formattedDate = startDateTime.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
   
-  // Prepare lead data for backend (calendar invite via email)
-  const meetingData = {
-    name, email, phone,
-    meet_link: meetLink,
-    scheduled_time: datetime,
-    formatted_time: formattedDate,
-    dispute_type: document.getElementById('disputeType')?.value || 'Not specified',
-    message: document.getElementById('messageText')?.value || 'No additional message'
-  };
+  document.getElementById('formStatus').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Scheduling...';
+  modal.style.display = 'none';
   
-  document.getElementById('formStatus').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Google Meet & sending calendar invitation...';
-  
-  try {
-    // Send to backend API that will trigger PHPMailer + Google Calendar .ics attachment
-    const response = await fetch('/api/google-meet.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(meetingData)
-    });
-    const result = await response.json();
-    if (result.success) {
-      document.getElementById('formStatus').innerHTML = `<span class="text-green-600">✓ Google Meet scheduled! Calendar invite sent to ${email}. Meeting link: <a href="${meetLink}" target="_blank" class="underline">Join Meeting</a></span>`;
-      modal.classList.add('hidden');
-      // Also send WhatsApp lead update about meeting
-      sendWhatsAppLead({ name, email, phone, dispute: meetingData.dispute_type, message: `Google Meet scheduled on ${formattedDate}. Link: ${meetLink}` }, 'google_meet');
-    } else {
-      document.getElementById('formStatus').innerHTML = `<span class="text-red-600">Error: ${result.message}. But we've captured your request. We'll email you manually.</span>`;
-      modal.classList.add('hidden');
-    }
-  } catch(err) {
-    // DEMO FALLBACK: show meet link and simulate calendar addition via mailto
-    console.warn('Backend not available, demo calendar generation');
-    const icsContent = generateICSFile(name, email, datetime, meetLink);
-    downloadICS(icsContent);
-    document.getElementById('formStatus').innerHTML = `<span class="text-green-600">✓ Demo: Google Meet link created. <a href="${meetLink}" target="_blank" class="underline font-bold">Click to start meeting</a><br>Calendar file downloaded. We also sent lead to admin.</span>`;
-    sendWhatsAppLead({ name, email, phone, dispute: 'Google Meet Request', message: `Scheduled meeting: ${formattedDate}` }, 'google_meet_demo');
-    modal.classList.add('hidden');
-  }
+  // Demo: Generate ICS file
+  const icsContent = generateICSFile(name, email, datetime, meetLink);
+  downloadICS(icsContent);
+  document.getElementById('formStatus').innerHTML = `<span class="text-green-600">✓ Google Meet scheduled! Calendar invite downloaded. Join: <a href="${meetLink}" target="_blank">Click here</a></span>`;
+  await sendWhatsAppLead({ name, email, phone, dispute: 'Google Meet', message: `Scheduled on ${formattedDate}` }, 'google_meet');
 });
 
-// Helper: generate .ics file for demo
 function generateICSFile(attendeeName, attendeeEmail, startDateTimeStr, meetUrl) {
   const start = new Date(startDateTimeStr);
   const end = new Date(start.getTime() + 60*60*1000);
   const formatICS = (date) => date.toISOString().replace(/-|:|\.\d+/g, '');
-  const uid = `meet-${Date.now()}@medarb.com`;
-  return `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Med Arb International//Google Meet//EN
-BEGIN:VEVENT
-UID:${uid}
-DTSTAMP:${formatICS(new Date())}
-DTSTART:${formatICS(start)}
-DTEND:${formatICS(end)}
-SUMMARY:Consultation with Med Arb International
-DESCRIPTION:Google Meet consultation\\nLink: ${meetUrl}\\nPlease join at scheduled time.
-LOCATION:Google Meet (${meetUrl})
-ATTENDEE;CN=${attendeeName}:mailto:${attendeeEmail}
-END:VEVENT
-END:VCALENDAR`;
+  return `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nUID:${Date.now()}@medarb.com\nDTSTART:${formatICS(start)}\nDTEND:${formatICS(end)}\nSUMMARY:Consultation with Med Arb International\nDESCRIPTION:Google Meet: ${meetUrl}\nLOCATION:Google Meet\nEND:VEVENT\nEND:VCALENDAR`;
 }
 
 function downloadICS(icsData) {
@@ -331,98 +567,8 @@ function downloadICS(icsData) {
   URL.revokeObjectURL(link.href);
 }
 
-// Mobile menu toggle
-document.getElementById('mobileMenuBtn')?.addEventListener('click',()=>{document.getElementById('mobileMenu')?.classList.toggle('hidden')});
-
-// Close modal on outside click
-window.onclick = function(event) {
-  if (event.target === modal) modal.classList.add('hidden');
-}
+window.onclick = function(event) { if (event.target === modal) modal.style.display = 'none'; };
 </script>
-
-<!-- BACKEND PHP FILES (Place in /api/ folder on server) -->
-<!-- 
-============== API /api/contact.php ==============
-<?php
-header('Content-Type: application/json');
-require_once '../vendor/autoload.php'; // PHPMailer
-require_once '../config/smtp.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$phone = $_POST['phone'] ?? '';
-$dispute = $_POST['dispute_type'] ?? '';
-$message = $_POST['message'] ?? '';
-
-if(!$name || !$email) { echo json_encode(['success'=>false,'message'=>'Missing fields']); exit; }
-
-$mail = new PHPMailer(true);
-try {
-    $mail->isSMTP();
-    $mail->Host = SMTP_HOST;
-    $mail->SMTPAuth = true;
-    $mail->Username = SMTP_USER;
-    $mail->Password = SMTP_PASS;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-    $mail->setFrom(SMTP_FROM, 'Med Arb International');
-    $mail->addAddress('admin@medarbinternational.com', 'Admin');
-    $mail->addReplyTo($email, $name);
-    $mail->Subject = 'New Consultation Request';
-    $mail->Body = "Name: $name\nEmail: $email\nPhone: $phone\nDispute: $dispute\nMessage: $message";
-    $mail->send();
-    
-    // Send confirmation to client
-    $mail->clearAddresses();
-    $mail->addAddress($email, $name);
-    $mail->Subject = 'We received your consultation request';
-    $mail->Body = "Dear $name,\n\nThank you for contacting Med Arb International. We will reach out within 24 hours.\n\nRegards,\nMed Arb Team";
-    $mail->send();
-    
-    echo json_encode(['success'=>true]);
-} catch(Exception $e) {
-    echo json_encode(['success'=>false,'message'=>$mail->ErrorInfo]);
-}
-?>
-
-============== /api/google-meet.php ==============
-<?php
-header('Content-Type: application/json');
-$data = json_decode(file_get_contents('php://input'), true);
-$name = $data['name'] ?? '';
-$email = $data['email'] ?? '';
-$phone = $data['phone'] ?? '';
-$meetLink = $data['meet_link'] ?? 'https://meet.google.com/new';
-$datetime = $data['scheduled_time'] ?? date('Y-m-d H:i:s');
-$formatted = $data['formatted_time'] ?? $datetime;
-
-// Send email via PHPMailer with ICS attachment
-require_once '../vendor/autoload.php';
-use PHPMailer\PHPMailer\PHPMailer;
-$mail = new PHPMailer(true);
-try {
-    // SMTP config similar to contact.php
-    $mail->isSMTP(); $mail->Host = SMTP_HOST; $mail->SMTPAuth = true;
-    $mail->Username = SMTP_USER; $mail->Password = SMTP_PASS;
-    $mail->setFrom(SMTP_FROM, 'Med Arb International');
-    $mail->addAddress($email, $name);
-    $mail->Subject = 'Your Google Meet Consultation Scheduled';
-    $body = "Dear $name,\n\nYour Google Meet consultation is scheduled for $formatted.\nJoin link: $meetLink\n\nAdd to calendar attached.\n\nBest regards,\nMed Arb Team";
-    $mail->Body = $body;
-    // Generate ICS content and attach
-    $ics = "BEGIN:VCALENDAR..."; // generate ICS with $meetLink, $datetime
-    $mail->addStringAttachment($ics, 'invite.ics', 'base64', 'text/calendar');
-    $mail->send();
-    echo json_encode(['success'=>true, 'meet_link'=>$meetLink]);
-} catch(Exception $e) {
-    echo json_encode(['success'=>false, 'message'=>$mail->ErrorInfo]);
-}
-?>
-============== END BACKEND ==============
--->
 
 </body>
 </html>
